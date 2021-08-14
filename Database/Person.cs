@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Database
 {
+    public enum Role { ADMIN, USER };
     public class Person
     {
         [Key]
@@ -15,5 +16,6 @@ namespace Database
         public string Name { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+        public Role Role { get; set; }
     }
 }

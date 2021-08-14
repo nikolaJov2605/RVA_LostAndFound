@@ -33,9 +33,6 @@ namespace Front.Views
             dpDate.Text = "Unesite datum";
             dpDate.Foreground = Brushes.LightSlateGray;
 
-            tbJMBG.Text = "Unesite JMBG";
-            tbJMBG.Foreground = Brushes.LightSlateGray;
-
             tbUsername.Text = "Unesite korisničko ime";
             tbUsername.Foreground = Brushes.LightSlateGray;
 
@@ -69,12 +66,6 @@ namespace Front.Views
                 isValid = false;
                 lblDateErr.Content = "Unesite datum";
                 lblDateErr.Foreground = new SolidColorBrush(Colors.Red);
-            }
-            if (!FieldValidation.Validate(tbJMBG.Text, "Unesite JMBG"))
-            {
-                isValid = false;
-                tbJMBG.Text = "Unesite JMBG";
-                tbJMBG.Foreground = new SolidColorBrush(Colors.Red);
             }
             if (!FieldValidation.Validate(tbUsername.Text, "Unesite korisničko ime"))
             {
@@ -133,23 +124,6 @@ namespace Front.Views
             }
         }
 
-        private void tbJMBG_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbJMBG.Text.Trim().Equals("Unesite JMBG"))
-            {
-                tbJMBG.Text = "";
-                tbJMBG.Foreground = Brushes.Black;
-            }
-        }
-
-        private void tbJMBG_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbJMBG.Text.Trim().Equals(string.Empty))
-            {
-                tbJMBG.Text = "Unesite JMBG";
-                tbJMBG.Foreground = Brushes.LightSlateGray;
-            }
-        }
 
         private void tbUsername_GotFocus(object sender, RoutedEventArgs e)
         {

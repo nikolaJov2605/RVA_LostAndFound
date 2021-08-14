@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateLnF : DbMigration
+    public partial class CreateLNF : DbMigration
     {
         public override void Up()
         {
@@ -35,6 +35,7 @@
                         Name = c.String(),
                         LastName = c.String(),
                         BirthDate = c.DateTime(nullable: false),
+                        Role = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Username);
             
