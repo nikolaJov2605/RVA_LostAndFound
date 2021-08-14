@@ -14,3 +14,17 @@ D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.Migra
 D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.csproj.GenerateResource.cache
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.csproj.AssemblyReference.cache
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\Database.dll.config
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\Database.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\Database.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\Common.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\EntityFramework.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\Common.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\EntityFramework.xml
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.csproj.CopyComplete
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.Migrations.CreateLNB.resources
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Database\obj\Debug\Database.csproj.GenerateResource.cache

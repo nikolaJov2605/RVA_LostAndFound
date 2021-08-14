@@ -11,6 +11,16 @@ namespace Common
     [DataContract]
     public  class Person
     {
+        public Person(string username, string password, string name, string lastName, string birthDate, Role role)
+        {
+            Username = username;
+            Password = password;
+            Name = name;
+            LastName = lastName;
+            BirthDate = birthDate;
+            Role = role;
+        }
+
         [DataMember]
         [Key]
         public  string Username { get; set; }
@@ -21,7 +31,7 @@ namespace Common
         [DataMember]
         public string LastName { get; set; }
         [DataMember]
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
         [DataMember]
         public Role Role { get; set; }
     }

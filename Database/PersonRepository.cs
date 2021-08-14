@@ -33,5 +33,16 @@ namespace Database
                 Console.WriteLine(e.Message);
             }
         }
+
+        public static bool Exists(Person p)
+        {
+            using (var context = new AppDBContext())
+            {
+                var query = context.Persons.Where(x => x.Username == p.Username).First<Person>();
+                if (query != null)
+                    return true;
+                return false;
+            }
+        }
     }
 }

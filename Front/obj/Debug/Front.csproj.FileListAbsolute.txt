@@ -42,3 +42,4 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.csproj.CopyComplete
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.exe
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\MainWindow.g.cs

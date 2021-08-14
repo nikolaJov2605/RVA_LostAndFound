@@ -1,7 +1,10 @@
-﻿using Front.ViewModel;
+﻿using Common;
+using Common.Registration;
+using Front.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -82,7 +85,18 @@ namespace Front.Views
 
             if (isValid == true)
             {
-                // provera postojanja i upis u bazu
+                Person person = new Person(tbUsername.Text, tbPasswd.Text, tbIme.Text, tbPrezime.Text, dpDate.Text, Role.USER);
+
+                ChannelFactory<IRegistration> factory = new ChannelFactory<IRegistration>("UserRegistration");
+                IRegistration proxy = factory.CreateChannel();
+
+                if(proxy.Register(person) == true)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    this.Close();
+                    mainWindow.Show();
+                }
+                
             }
             else
                 return;

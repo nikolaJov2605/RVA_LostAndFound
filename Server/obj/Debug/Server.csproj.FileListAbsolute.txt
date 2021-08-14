@@ -1,2 +1,15 @@
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.csproj.AssemblyReference.cache
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Server.exe.config
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Server.exe
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Server.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Common.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Database.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\EntityFramework.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Common.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Database.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Database.dll.config
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\EntityFramework.xml
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.exe
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.pdb
