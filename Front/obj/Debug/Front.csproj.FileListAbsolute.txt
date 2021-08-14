@@ -27,6 +27,7 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Entity
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\EntityFramework.xml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.csproj.AssemblyReference.cache
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Login.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Registracija.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\App.g.cs

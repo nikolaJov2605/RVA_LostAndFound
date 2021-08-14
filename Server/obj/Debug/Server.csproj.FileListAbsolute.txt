@@ -1,0 +1,2 @@
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
