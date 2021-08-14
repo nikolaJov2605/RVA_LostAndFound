@@ -10,6 +10,23 @@ namespace Common
     [DataContract]
     public class Item
     {
+        public Item()
+        {
+
+        }
+
+        public Item(int id, DateTime date, string title, string location, string description, Person owner, Person finder, bool isFound)
+        {
+            Id = id;
+            Date = date;
+            Title = title;
+            Location = location;
+            Description = description;
+            Owner = owner;
+            Finder = finder;
+            IsFound = isFound;
+        }
+
         [DataMember]
         public int Id { get; set; }
         [DataMember]

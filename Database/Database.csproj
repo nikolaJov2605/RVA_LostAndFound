@@ -55,9 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDBContext.cs" />
-    <Compile Include="Migrations\202108141845587_CreateLNB.cs" />
-    <Compile Include="Migrations\202108141845587_CreateLNB.designer.cs">
-      <DependentUpon>202108141845587_CreateLNB.cs</DependentUpon>
+    <Compile Include="Migrations\202108142127537_CreateLNF.cs" />
+    <Compile Include="Migrations\202108142127537_CreateLNF.designer.cs">
+      <DependentUpon>202108142127537_CreateLNF.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonRepository.cs" />
@@ -74,8 +74,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108141845587_CreateLNB.resx">
-      <DependentUpon>202108141845587_CreateLNB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108142127537_CreateLNF.resx">
+      <DependentUpon>202108142127537_CreateLNF.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,6 +11,11 @@ namespace Common
     [DataContract]
     public  class Person
     {
+        public Person()
+        {
+
+        }
+
         public Person(string username, string password, string name, string lastName, string birthDate, Role role)
         {
             Username = username;

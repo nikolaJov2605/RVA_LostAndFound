@@ -36,13 +36,29 @@ namespace Database
 
         public static bool Exists(Person p)
         {
-            using (var context = new AppDBContext())
+            /*using (var context = new AppDBContext())
             {
                 var query = context.Persons.Where(x => x.Username == p.Username).First<Person>();
                 if (query != null)
                     return true;
                 return false;
+            }*/
+
+            AppDBContext context = new AppDBContext();
+
+            try
+            {
+                var query = context.Persons.Where(x => x.Username == p.Username).First<Person>();
+                if (query != null)
+                    return true;
             }
+            catch
+            {
+                return false;
+            }
+
+            return false;
+            
         }
     }
 }

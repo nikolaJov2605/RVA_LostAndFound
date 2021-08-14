@@ -7,13 +7,13 @@ namespace Database.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CreateLNB : IMigrationMetadata
+    public sealed partial class CreateLNF : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateLNB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateLNF));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108141845587_CreateLNB"; }
+            get { return "202108142127537_CreateLNF"; }
         }
         
         string IMigrationMetadata.Source
