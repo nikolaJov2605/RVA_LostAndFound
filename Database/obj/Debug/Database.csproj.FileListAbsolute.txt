@@ -1,0 +1,14 @@
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\Database.dll.config
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\Database.dll
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\Database.pdb
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\EntityFramework.dll
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\EntityFramework.SqlServer.dll
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\EntityFramework.xml
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\bin\Debug\EntityFramework.SqlServer.xml
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.csproj.AssemblyReference.cache
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.csproj.CopyComplete
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.dll
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.pdb
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.Migrations.CreateLnF.resources
+D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Database\obj\Debug\Database.csproj.GenerateResource.cache

@@ -1,0 +1,28 @@
+﻿<Window x:Class="Front.Views.Registracija"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front.Views"
+        mc:Ignorable="d"
+        Title="Registracija" Height="425" Width="420">
+    <Grid>
+        <Label x:Name="lblCaption" Content="Registracija" HorizontalAlignment="Center" Margin="10,10,-0.4,0" VerticalAlignment="Top" Height="69" Width="784" FontSize="40" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblIme" Content="Ime:" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>
+        <Label x:Name="lblPrezime" Content="Prezime:" HorizontalAlignment="Left" Margin="30,136,0,0" VerticalAlignment="Top" Width="85" FontSize="20" RenderTransformOrigin="0.48,-0.163"/>
+        <Label x:Name="lblDatum" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="lblPasswd" Content="Lozinka:" HorizontalAlignment="Left" Margin="30,262,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <TextBox x:Name="tbIme" HorizontalAlignment="Left" Height="23" Margin="185,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbIme_GotFocus" LostFocus="tbIme_LostFocus"/>
+        <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbPrezime_GotFocus" LostFocus="tbPrezime_LostFocus"/>
+        <TextBox x:Name="tbUsername" HorizontalAlignment="Left" Height="23" Margin="185,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbUsername_GotFocus" LostFocus="tbUsername_LostFocus"/>
+        <TextBox x:Name="tbPasswd" HorizontalAlignment="Left" Height="23" Margin="185,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbPasswd_GotFocus" LostFocus="tbPasswd_LostFocus"/>
+        <Button x:Name="btnRegister" Content="Registruj se" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnRegister_Click"/>
+        <Label x:Name="lblContent" Content="Već ste registrovani?" HorizontalAlignment="Left" Margin="214,361,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label x:Name="lblLogin" HorizontalAlignment="Left" Margin="334,361,0,0" VerticalAlignment="Top">
+            <TextBlock TextDecorations="Underline" FontStyle="Italic" Foreground="Blue" MouseDown="TextBlock_MouseDown">Ulogujte se</TextBlock>
+        </Label>
+        <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="105" SelectedDateFormat="Short"/>
+        <Label x:Name="lblDateErr" Content="" HorizontalAlignment="Left" Margin="295,185,0,0" VerticalAlignment="Top" Width="94"/>
+    </Grid>
+</Window>
