@@ -1,9 +1,0 @@
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\bin\Debug\Client.dll
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\bin\Debug\Client.pdb
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\bin\Debug\Common.dll
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\bin\Debug\Common.pdb
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\obj\Debug\Client.csproj.AssemblyReference.cache
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\obj\Debug\Client.csproj.CopyComplete
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\obj\Debug\Client.dll
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Client\obj\Debug\Client.pdb

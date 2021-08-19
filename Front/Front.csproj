@@ -70,9 +70,8 @@
     <Compile Include="LoadLoggedPerson.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Model\PersonModel.cs" />
-    <Compile Include="ViewModel\FieldValidation.cs" />
+    <Compile Include="FieldValidation.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
-    <Compile Include="ViewModel\PersonViewModel.cs" />
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>

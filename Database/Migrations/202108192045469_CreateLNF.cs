@@ -12,7 +12,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Date = c.DateTime(nullable: false),
+                        Date = c.String(),
                         Title = c.String(),
                         Location = c.String(),
                         Description = c.String(),

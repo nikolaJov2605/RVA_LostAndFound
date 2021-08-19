@@ -13,7 +13,7 @@ namespace Database.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202108142127537_CreateLNF"; }
+            get { return "202108192045469_CreateLNF"; }
         }
         
         string IMigrationMetadata.Source

@@ -15,7 +15,7 @@ namespace Common
 
         }
 
-        public Item(int id, DateTime date, string title, string location, string description, Person owner, Person finder, bool isFound)
+        public Item(int id, string date, string title, string location, string description, Person owner, Person finder, bool isFound)
         {
             Id = id;
             Date = date;
@@ -30,7 +30,7 @@ namespace Common
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         [DataMember]
         public string Title { get; set; }
         [DataMember]
