@@ -17,11 +17,8 @@
         <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbPrezime_GotFocus" LostFocus="tbPrezime_LostFocus"/>
         <TextBox x:Name="tbUsername" HorizontalAlignment="Left" Height="23" Margin="185,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbUsername_GotFocus" LostFocus="tbUsername_LostFocus"/>
         <TextBox x:Name="tbPasswd" HorizontalAlignment="Left" Height="23" Margin="185,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbPasswd_GotFocus" LostFocus="tbPasswd_LostFocus"/>
-        <Button x:Name="btnRegister" Content="Registruj se" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnRegister_Click"/>
-        <Label x:Name="lblContent" Content="Već ste registrovani?" HorizontalAlignment="Left" Margin="214,361,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
-        <Label x:Name="lblLogin" HorizontalAlignment="Left" Margin="334,361,0,0" VerticalAlignment="Top">
-            <TextBlock TextDecorations="Underline" FontStyle="Italic" Foreground="Blue" MouseDown="TextBlock_MouseDown">Ulogujte se</TextBlock>
-        </Label>
+        <Button x:Name="btnRegister" Content="Registracija" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnRegister_Click"/>
+        
         <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="105" SelectedDateFormat="Short"/>
         <Label x:Name="lblDateErr" Content="" HorizontalAlignment="Left" Margin="295,185,0,0" VerticalAlignment="Top" Width="94"/>
     </Grid>

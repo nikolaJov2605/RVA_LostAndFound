@@ -1,5 +1,5 @@
 ﻿using Common;
-using Common.Registration;
+using Common.Services;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -41,12 +41,6 @@ namespace Front.Views
 
             tbPasswd.Text = "Unesite lozinku";
             tbPasswd.Foreground = Brushes.LightSlateGray;
-        }
-
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Login loginWindow = new Login();
-            loginWindow.Show();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)

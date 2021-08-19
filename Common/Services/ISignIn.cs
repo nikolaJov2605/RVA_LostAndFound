@@ -5,12 +5,12 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Registration
+namespace Common.Services
 {
     [ServiceContract]
-    public interface IRegistration
+    public interface ISignIn
     {
         [OperationContract]
-        bool Register(Person person);
+        bool SignIn(string username, string password);
     }
 }

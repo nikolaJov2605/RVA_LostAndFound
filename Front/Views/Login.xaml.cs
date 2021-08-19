@@ -1,7 +1,9 @@
-﻿using Front.ViewModel;
+﻿using Common.Services;
+using Front.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -50,7 +52,16 @@ namespace Front.Views
 
             if (isValid == true)
             {
-                // provera u bazi
+
+                ChannelFactory<ISignIn> factory = new ChannelFactory<ISignIn>("UserSignIn");
+                ISignIn proxy = factory.CreateChannel();
+
+                if (proxy.SignIn(tbUsername.Text, tbPasswd.Text) == true)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    this.Close();
+                    mainWindow.Show();
+                }
             }
             else
                 return;
@@ -90,6 +101,12 @@ namespace Front.Views
                 tbPasswd.Text = "Unesite lozinku";
                 tbPasswd.Foreground = Brushes.Black;
             }
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Registracija registrationWindow = new Registracija();
+            registrationWindow.Show();
         }
     }
 }

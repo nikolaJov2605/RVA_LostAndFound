@@ -1,4 +1,4 @@
-﻿using Common.Registration;
+﻿using Common.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,12 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            ServiceHost serviceHost = new ServiceHost(typeof(Registration.Registration));
-            serviceHost.Open();
+            ServiceHost registrationService = new ServiceHost(typeof(Registration.Registration));
+            registrationService.Open();
             Console.WriteLine("Server is up");
+
+            ServiceHost loginService = new ServiceHost(typeof(SignIn.SignIn));
+            loginService.Open();
             Console.ReadLine();
         }
     }

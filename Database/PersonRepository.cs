@@ -53,5 +53,22 @@ namespace Database
             return false;
             
         }
+
+        public static Person FindByUsername(string username)
+        {
+            AppDBContext context = new AppDBContext();
+
+            try
+            {
+                var query = context.Persons.Where(x => x.Username == username).First<Person>();
+                if (query != null)
+                    return query;
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
+        }
     }
 }
