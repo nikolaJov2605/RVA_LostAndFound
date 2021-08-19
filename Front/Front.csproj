@@ -66,7 +66,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoadItemsInfo.cs" />
+    <Compile Include="LoadLoggedPerson.cs" />
+    <Compile Include="Model\ItemModel.cs" />
+    <Compile Include="Model\PersonModel.cs" />
     <Compile Include="ViewModel\FieldValidation.cs" />
+    <Compile Include="ViewModel\MainDataViewModel.cs" />
+    <Compile Include="ViewModel\PersonViewModel.cs" />
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -125,10 +131,12 @@
       <Project>{DEDA9D76-33CC-4BA5-BE0F-A8D9A841F81B}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{8032CD81-F08A-4701-BB94-B0E5C011315F}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

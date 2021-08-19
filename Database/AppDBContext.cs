@@ -11,6 +11,6 @@ namespace Database
     public class AppDBContext : DbContext
     {
         public DbSet<Person> Persons { get; set; }
-        public DbSet<Item> Objects { get; set; }
+        public DbSet<Item> Items { get; set; }
     }
 }

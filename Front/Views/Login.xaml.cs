@@ -58,7 +58,7 @@ namespace Front.Views
 
                 if (proxy.SignIn(tbUsername.Text, tbPasswd.Text) == true)
                 {
-                    MainWindow mainWindow = new MainWindow();
+                    MainWindow mainWindow = new MainWindow(tbUsername.Text);
                     this.Close();
                     mainWindow.Show();
                 }

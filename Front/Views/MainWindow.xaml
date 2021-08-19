@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <GroupBox x:Name="groupBox" Header="User" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
+            <Grid>
+                <Label x:Name="lblUsername" Content="{Binding Person.Username}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblName" Content="{Binding Person.Name}" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblLastName" Content="{Binding Person.LastName}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Left" Height="186" Margin="129,10,0,0" VerticalAlignment="Top" Width="655"/>
+
+
     </Grid>
 </Window>

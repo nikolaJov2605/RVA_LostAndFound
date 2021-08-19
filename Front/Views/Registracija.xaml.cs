@@ -86,9 +86,10 @@ namespace Front.Views
 
                 if(proxy.Register(person) == true)
                 {
-                    MainWindow mainWindow = new MainWindow();
+                    /*MainWindow mainWindow = new MainWindow();
                     this.Close();
-                    mainWindow.Show();
+                    mainWindow.Show();*/
+                    Console.WriteLine("User " + person.Username + " registered");
                 }
                 
             }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Front.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +25,12 @@ namespace Front.Views
         {
             InitializeComponent();
         }
+
+        public MainWindow(string username) : base()
+        {
+            InitializeComponent();
+            DataContext = new MainDataViewModel(username);
+        }
+
     }
 }
