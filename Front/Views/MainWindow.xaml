@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900">
     <Grid>
         <GroupBox x:Name="groupBox" Header="User" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
             <Grid>
@@ -14,9 +14,59 @@
                 <Label x:Name="lblLastName" Content="{Binding Person.LastName}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="186" Margin="129,10,0,0" VerticalAlignment="Top" Width="655">
-            
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Naziv predmeta" Binding="{Binding Path=Title}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Lokacija" Binding="{Binding Path=Location}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Description}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Vlasnik" Binding="{Binding Path=Owner.Username}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Pronalazač" Binding="{Binding Path=Finder.Username}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="btnAddItem" Content="Dodaj predmet" HorizontalAlignment="Left" Margin="781,248,0,0" VerticalAlignment="Top" Width="103" Height="24" Click="btnAddItem_Click"/>
 
 
     </Grid>

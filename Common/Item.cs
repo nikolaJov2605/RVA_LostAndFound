@@ -26,6 +26,16 @@ namespace Common
             Finder = finder;
             IsFound = isFound;
         }
+        public Item(int id, string date, string title, string location, string description, Person owner, bool isFound)
+        {
+            Id = id;
+            Date = date;
+            Title = title;
+            Location = location;
+            Description = description;
+            Owner = owner;
+            IsFound = isFound;
+        }
 
         [DataMember]
         public int Id { get; set; }

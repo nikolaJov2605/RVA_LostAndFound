@@ -32,5 +32,10 @@ namespace Front.Views
             DataContext = new MainDataViewModel(username);
         }
 
+        private void btnAddItem_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem addItemWindow = new AddItem();
+            addItemWindow.Show();
+        }
     }
 }

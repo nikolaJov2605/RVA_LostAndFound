@@ -28,7 +28,7 @@ namespace Front.Model
                 if (id != value)
                 {
                     id = value;
-                    RaisePropertyChanged("ID");
+                    RaisePropertyChanged("Id");
                 }
             }
         }

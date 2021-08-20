@@ -90,6 +90,7 @@ namespace Front.Views
                     this.Close();
                     mainWindow.Show();*/
                     Console.WriteLine("User " + person.Username + " registered");
+                    this.Close();
                 }
                 
             }
