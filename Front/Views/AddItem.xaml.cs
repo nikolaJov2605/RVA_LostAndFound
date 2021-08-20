@@ -1,5 +1,6 @@
 ﻿using Common;
 using Common.Services;
+using Front.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,11 @@ namespace Front.Views
     /// </summary>
     public partial class AddItem : Window
     {
-        public AddItem()
+        public AddItem(string username) : base()
         {
             InitializeComponent();
+
+            DataContext = new MainDataViewModel(username);
 
             dpDate.Text = "Unesite datum";
             dpDate.Foreground = Brushes.LightSlateGray;
@@ -40,9 +43,6 @@ namespace Front.Views
 
             tbVlasnik.Text = "Unesite korisničko ime vlasnika";
             tbVlasnik.Foreground = Brushes.LightSlateGray;
-
-            tbPronalazac.Text = "Unesite korisničko ime pronalazača";
-            tbPronalazac.Foreground = Brushes.LightSlateGray;
 
         }
 
@@ -81,12 +81,6 @@ namespace Front.Views
                 tbVlasnik.Text = "Unesite korisničko ime vlasnika";
                 tbVlasnik.Foreground = new SolidColorBrush(Colors.Red);
             }
-            if (!FieldValidation.Validate(tbPronalazac.Text, "Unesite korisničko ime pronalazača"))
-            {
-                isValid = false;
-                tbPronalazac.Text = "Unesite korisničko ime pronalazača";
-                tbPronalazac.Foreground = new SolidColorBrush(Colors.Red);
-            }
 
             if (isValid == true)
             {
@@ -96,7 +90,7 @@ namespace Front.Views
                 int key = proxy.GetAvailableKeyValue();
                 Person owner = proxy.FindPerson(tbVlasnik.Text);
                 //Person finder = proxy.FindPerson(tbPronalazac.Text);
-                Item item = new Item(key, dpDate.Text, tbNaziv.Text, tbLokacija.Text, tbOpis.Text, owner, false);
+                Item item = new Item(key, dpDate.Text, tbNaziv.Text, tbLokacija.Text, tbOpis.Text, owner, null, false);
 
                 proxy.Add(item);
                 this.Close();
@@ -174,24 +168,6 @@ namespace Front.Views
             {
                 tbVlasnik.Text = "Unesite korisničko ime vlasnika";
                 tbVlasnik.Foreground = Brushes.LightSlateGray;
-            }
-        }
-
-        private void tbPronalazac_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbPronalazac.Text.Trim().Equals("Unesite korisničko ime pronalazača"))
-            {
-                tbPronalazac.Text = "";
-                tbPronalazac.Foreground = Brushes.Black;
-            }
-        }
-
-        private void tbPronalazac_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbPronalazac.Text.Trim().Equals(string.Empty))
-            {
-                tbPronalazac.Text = "Unesite korisničko ime pronalazača";
-                tbPronalazac.Foreground = Brushes.LightSlateGray;
             }
         }
     }

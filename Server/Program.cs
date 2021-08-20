@@ -14,10 +14,16 @@ namespace Server
         {
             ServiceHost registrationService = new ServiceHost(typeof(Registration.Registration));
             registrationService.Open();
-            Console.WriteLine("Server is up");
+            Console.WriteLine("Registration service is up...");
 
             ServiceHost loginService = new ServiceHost(typeof(SignIn.SignIn));
             loginService.Open();
+            Console.WriteLine("Login service is up...");
+
+            ServiceHost addItemService = new ServiceHost(typeof(AddItem.AddItem));
+            addItemService.Open();
+            Console.WriteLine("AddItem service is up...");
+            Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }
     }

@@ -13,14 +13,14 @@ namespace Front.ViewModel
     public class MainDataViewModel
     {
         public PersonModel Person { get; set; }
-        public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>(LoadItemsInfo.LoadItems());
+        public List<Item> Items { get; set; }
 
         public MainDataViewModel(string username)
         {
             PersonModel person = LoadLoggedPerson.LoadPerson(username);
             Person = person;
 
-            //Items = new ObservableCollection(LoadItemsInfo.LoadItems());
+            Items = new List<Item>(LoadItemsInfo.LoadItems());
         }
     }
 }

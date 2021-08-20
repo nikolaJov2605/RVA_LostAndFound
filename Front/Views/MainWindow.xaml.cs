@@ -34,7 +34,7 @@ namespace Front.Views
 
         private void btnAddItem_Click(object sender, RoutedEventArgs e)
         {
-            AddItem addItemWindow = new AddItem();
+            AddItem addItemWindow = new AddItem(lblUsername.Content.ToString());
             addItemWindow.Show();
         }
     }

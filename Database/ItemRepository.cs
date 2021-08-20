@@ -13,24 +13,28 @@ namespace Database
         public static List<Item> GetItems()
         {
             AppDBContext itemDBContext = new AppDBContext();
-            return itemDBContext.Items.ToList();
+            var query = itemDBContext.Items.Include("Owner").Include("Finder").ToList();
+            return query;
         }
         public static void AddItem(Item i)
         {
-            AppDBContext itemDBContext = new AppDBContext();
-            try
+            AppDBContext appDBContext = new AppDBContext();
+
+            var dataPerson = appDBContext.Persons.FirstOrDefault(x => x.Username == i.Owner.Username);
+            var key = appDBContext.Items.Count();
+            appDBContext.Items.Add(new Item
             {
-                itemDBContext.Items.Add(i);
-                itemDBContext.SaveChanges();
-            }
-            catch (SqlException e)
-            {
-                Console.Write(e.Message);
-            }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                Id = key,
+                Date = i.Date,
+                Title = i.Title,
+                Location = i.Location,
+                Description = i.Description,
+                Owner = dataPerson,
+                Finder = null,
+                IsFound = false
+            });
+
+            appDBContext.SaveChanges();
         }
 
         public static bool Exists(Item i)

@@ -56,7 +56,7 @@
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Pronalazač" Binding="{Binding Path=Finder.Username}" Width="*">
+                <DataGridTextColumn Header="Pronalazač" Binding="{Binding Path=Finder}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>

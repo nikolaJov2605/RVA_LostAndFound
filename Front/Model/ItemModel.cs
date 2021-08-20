@@ -15,10 +15,21 @@ namespace Front.Model
         private string title;
         private string location;
         private string description;
-        private Person owner;
-        private Person finder;
+        private string ownerUsername;
+        private string finderUsername;
         private bool isFound;
 
+        public ItemModel(int id, string date, string title, string location, string description, string ownerUsername, string finderUsername, bool isFound)
+        {
+            this.id = id;
+            this.date = date;
+            this.title = title;
+            this.location = location;
+            this.description = description;
+            this.ownerUsername = ownerUsername;
+            this.finderUsername = finderUsername;
+            this.isFound = isFound;
+        }
 
         public int Id
         {
@@ -80,27 +91,27 @@ namespace Front.Model
                 }
             }
         }
-        public Person Owner
+        public string OwnerUsername
         {
-            get { return owner; }
+            get { return ownerUsername; }
             set
             {
-                if(owner != value)
+                if(ownerUsername != value)
                 {
-                    owner = value;
-                    RaisePropertyChanged("Owner");
+                    ownerUsername = value;
+                    RaisePropertyChanged("OwnerUsername");
                 }
             }
         }
-        public Person Finder
+        public string FinderUsername
         {
-            get { return finder; }
+            get { return finderUsername; }
             set
             {
-                if(finder != value)
+                if(finderUsername != value)
                 {
-                    finder = value;
-                    RaisePropertyChanged("Finder");
+                    finderUsername = value;
+                    RaisePropertyChanged("FinderUsername");
                 }    
             }
         }
