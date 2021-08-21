@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Server.AddItem
+namespace Server.ItemServices
 {
     public class AddItem : IAddItem
     {

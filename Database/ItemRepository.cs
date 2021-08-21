@@ -37,6 +37,13 @@ namespace Database
             appDBContext.SaveChanges();
         }
 
+        public static void DeleteItem(Item i)
+        {
+            AppDBContext appDBContext = new AppDBContext();
+            appDBContext.Items.Remove(i);
+            appDBContext.SaveChanges();
+        }
+
         public static bool Exists(Item i)
         {
             AppDBContext context = new AppDBContext();

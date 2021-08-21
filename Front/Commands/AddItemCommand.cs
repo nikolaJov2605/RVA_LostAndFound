@@ -17,6 +17,9 @@ namespace Front.Commands
         private string location;
         private string description;
 
+        private int key;
+        private Person owner;
+
         public AddItemCommand(string username, string date, string name, string location, string description)
         {
             this.username = username;
@@ -31,8 +34,8 @@ namespace Front.Commands
             ChannelFactory<IAddItem> factory = new ChannelFactory<IAddItem>("AddItem");
             IAddItem proxy = factory.CreateChannel();
 
-            int key = proxy.GetAvailableKeyValue();
-            Person owner = proxy.FindPerson(username);
+            key = proxy.GetAvailableKeyValue();
+            owner = proxy.FindPerson(username);
             //Person finder = proxy.FindPerson(tbPronalazac.Text);
             Item item = new Item(key, date, name, location, description, owner, null, false);
 
@@ -42,7 +45,19 @@ namespace Front.Commands
 
         public override void Unexecute()
         {
-            throw new NotImplementedException();
+            ChannelFactory<IDeleteItem> factory = new ChannelFactory<IDeleteItem>("DeleteItem");
+            IDeleteItem proxy = factory.CreateChannel();
+            Item item = proxy.FindItem(key);
+            if (item != null)
+            {
+                proxy.DeleteItem(item);
+                Console.WriteLine("AddItem Unexecute method done...");
+            }
+            else
+            {
+                Console.WriteLine("AddItem Unexecute method failed...");
+                return;
+            }
         }
     }
 }
