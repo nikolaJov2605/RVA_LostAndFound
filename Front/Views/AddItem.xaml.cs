@@ -1,5 +1,6 @@
 ﻿using Common;
 using Common.Services;
+using Front.Commands;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -84,15 +85,10 @@ namespace Front.Views
 
             if (isValid == true)
             {
-                ChannelFactory<IAddItem> factory = new ChannelFactory<IAddItem>("AddItem");
-                IAddItem proxy = factory.CreateChannel();
+                Command addItem = new AddItemCommand(tbVlasnik.Text, dpDate.Text, tbNaziv.Text, tbLokacija.Text, tbOpis.Text);
 
-                int key = proxy.GetAvailableKeyValue();
-                Person owner = proxy.FindPerson(tbVlasnik.Text);
-                //Person finder = proxy.FindPerson(tbPronalazac.Text);
-                Item item = new Item(key, dpDate.Text, tbNaziv.Text, tbLokacija.Text, tbOpis.Text, owner, null, false);
+                addItem.Execute();
 
-                proxy.Add(item);
                 this.Close();
             }
             else

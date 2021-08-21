@@ -1,4 +1,5 @@
 ﻿using Common.Services;
+using Server.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Server
             loginService.Open();
             Console.WriteLine("Login service is up...");
 
-            ServiceHost addItemService = new ServiceHost(typeof(AddItem.AddItem));
+            ServiceHost addItemService = new ServiceHost(typeof(AddItemCommand));
             addItemService.Open();
             Console.WriteLine("AddItem service is up...");
             Console.WriteLine("Server is fully up!");

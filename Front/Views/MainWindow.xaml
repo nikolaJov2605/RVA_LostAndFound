@@ -16,7 +16,7 @@
         </GroupBox>
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date}" Width="*">
+                <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date, UpdateSourceTrigger=PropertyChanged}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -24,7 +24,7 @@
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Naziv predmeta" Binding="{Binding Path=Title}" Width="*">
+                <DataGridTextColumn Header="Naziv predmeta" Binding="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -32,7 +32,7 @@
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Lokacija" Binding="{Binding Path=Location}" Width="*">
+                <DataGridTextColumn Header="Lokacija" Binding="{Binding Path=Location, UpdateSourceTrigger=PropertyChanged}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -40,7 +40,7 @@
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Description}" Width="*">
+                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -48,7 +48,7 @@
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Vlasnik" Binding="{Binding Path=Owner.Username}" Width="*">
+                <DataGridTextColumn Header="Vlasnik" Binding="{Binding Path=Owner.Username, UpdateSourceTrigger=PropertyChanged}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -56,7 +56,7 @@
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Pronalazač" Binding="{Binding Path=Finder}" Width="*">
+                <DataGridTextColumn Header="Pronalazač" Binding="{Binding Path=Finder, UpdateSourceTrigger=PropertyChanged}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>

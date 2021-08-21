@@ -26,6 +26,7 @@ namespace Server.AddItem
             }
         }
 
+
         public Person FindPerson(string username)
         {
             Person person = PersonRepository.FindByUsername(username);
