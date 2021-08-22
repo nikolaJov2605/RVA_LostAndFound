@@ -87,7 +87,7 @@ namespace Front.Views
             {
                 Command addItem = new AddItemCommand(tbVlasnik.Text, dpDate.Text, tbNaziv.Text, tbLokacija.Text, tbOpis.Text);
 
-                addItem.Execute();
+                CommandExecutor.Invoker.AddAndExecuteCommand(addItem);
 
                 this.Close();
             }

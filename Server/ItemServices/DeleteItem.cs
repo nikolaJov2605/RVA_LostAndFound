@@ -13,20 +13,32 @@ namespace Server.ItemServices
     {
         public Item FindItem(int key)
         {
-            throw new NotImplementedException();
+            AppDBContext context = new AppDBContext();
+
+            try
+            {
+                var query = context.Items.Where(x => x.Id == key).First<Item>();
+                if (query != null)
+                    return query;
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
         }
 
-        bool IDeleteItem.DeleteItem(Item item)
+        bool IDeleteItem.DeleteItem(int key)
         {
-            if (ItemRepository.Exists(item))
+            if (ItemRepository.Exists(key))
             {
-                ItemRepository.DeleteItem(item);
-                Console.WriteLine("Item " + item.Title + " successfully deleted from database...");
+                ItemRepository.DeleteItem(key);
+                Console.WriteLine("Item successfully deleted from database...");
                 return true;
             }
             else
             {
-                Console.WriteLine("Item " + item.Title + " doesn't exist and can't be deleted...");
+                Console.WriteLine("Item doesn't exist and can't be deleted...");
                 return false;
             }
         }

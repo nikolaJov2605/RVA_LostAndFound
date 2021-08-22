@@ -13,17 +13,17 @@ namespace Server.ItemServices
     {
         public bool Add(Item item)
         {
-            if (ItemRepository.Exists(item))
+            /*if (ItemRepository.Exists(item))
             {
                 Console.WriteLine("Item " + item.Title + " failed to be added to database");
                 return false;
             }
             else
-            {
+            {*/
                 ItemRepository.AddItem(item);
                 Console.WriteLine("Item " + item.Title + " added to database");
                 return true;
-            }
+           // }
         }
 
 
@@ -44,7 +44,7 @@ namespace Server.ItemServices
 
         public int GetAvailableKeyValue()
         {
-            int keyVal = ItemRepository.RowNum();
+            int keyVal = ItemRepository.RowNum() + 1;
             Console.WriteLine("Key declared to item is " + keyVal.ToString());
             return keyVal;
         }

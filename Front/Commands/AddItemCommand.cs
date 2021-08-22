@@ -27,6 +27,7 @@ namespace Front.Commands
             this.name = name;
             this.location = location;
             this.description = description;
+            this.key = -1;
         }
 
         public override void Execute()
@@ -47,17 +48,8 @@ namespace Front.Commands
         {
             ChannelFactory<IDeleteItem> factory = new ChannelFactory<IDeleteItem>("DeleteItem");
             IDeleteItem proxy = factory.CreateChannel();
-            Item item = proxy.FindItem(key);
-            if (item != null)
-            {
-                proxy.DeleteItem(item);
-                Console.WriteLine("AddItem Unexecute method done...");
-            }
-            else
-            {
-                Console.WriteLine("AddItem Unexecute method failed...");
-                return;
-            }
+            proxy.DeleteItem(key);
+
         }
     }
 }

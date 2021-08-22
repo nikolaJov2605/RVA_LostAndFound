@@ -11,29 +11,31 @@ namespace Front.Commands
         public List<Command> commandHistory;
         private int currentCommandIdx;
 
-        CommandInvoker()
+        public CommandInvoker()
         {
             commandHistory = new List<Command>();
-            currentCommandIdx = -1;
+            currentCommandIdx = 0;
         }
 
         public void AddAndExecuteCommand(Command command)
         {
             commandHistory.Add(command);
-            commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - currentCommandIdx);
             command.Execute();
-            currentCommandIdx = commandHistory.Count - 1;
+            currentCommandIdx = commandHistory.Count;
+            commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - currentCommandIdx);
         }
 
         public void Undo()
         {
+            if (commandHistory.Count - 1 < 0)
+                return;
             commandHistory[commandHistory.Count - 1].Unexecute();
             currentCommandIdx--;
         }
 
-        public void Unexecute()
+        public void Redo()
         {
-            if (currentCommandIdx + 1 >= commandHistory.Count)
+            if (currentCommandIdx + 1 > commandHistory.Count)
                 return;
 
             currentCommandIdx++;

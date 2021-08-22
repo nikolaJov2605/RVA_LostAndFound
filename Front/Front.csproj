@@ -69,6 +69,7 @@
     <Compile Include="Commands\AddItemCommand.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandInvoker.cs" />
+    <Compile Include="Commands\CommandExecutor.cs" />
     <Compile Include="LoadItemsInfo.cs" />
     <Compile Include="LoadLoggedPerson.cs" />
     <Compile Include="Model\ItemModel.cs" />

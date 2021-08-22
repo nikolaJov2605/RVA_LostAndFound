@@ -1,4 +1,5 @@
-﻿using Front.ViewModel;
+﻿using Front.Commands;
+using Front.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,16 @@ namespace Front.Views
         {
             AddItem addItemWindow = new AddItem(lblUsername.Content.ToString());
             addItemWindow.Show();
+        }
+
+        private void btnUndo_Click(object sender, RoutedEventArgs e)
+        {
+            CommandExecutor.Invoker.Undo();
+        }
+
+        private void btnRedo_Click(object sender, RoutedEventArgs e)
+        {
+            CommandExecutor.Invoker.Redo();
         }
     }
 }

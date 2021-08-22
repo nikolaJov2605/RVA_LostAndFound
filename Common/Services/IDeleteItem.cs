@@ -11,7 +11,7 @@ namespace Common.Services
     public interface IDeleteItem
     {
         [OperationContract]
-        bool DeleteItem(Item item);
+        bool DeleteItem(int key);
 
         [OperationContract]
         Item FindItem(int key);

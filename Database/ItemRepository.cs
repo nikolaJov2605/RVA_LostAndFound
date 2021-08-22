@@ -37,20 +37,21 @@ namespace Database
             appDBContext.SaveChanges();
         }
 
-        public static void DeleteItem(Item i)
+        public static void DeleteItem(int key)
         {
             AppDBContext appDBContext = new AppDBContext();
-            appDBContext.Items.Remove(i);
+            var query = appDBContext.Items.Where(x => x.Id == key).First<Item>();
+            appDBContext.Items.Remove(query);
             appDBContext.SaveChanges();
         }
 
-        public static bool Exists(Item i)
+        public static bool Exists(int key)
         {
             AppDBContext context = new AppDBContext();
 
             try
             {
-                var query = context.Items.Where(x => x.Id == i.Id).First<Item>();
+                var query = context.Items.Where(x => x.Id == key).First<Item>();
                 if (query != null)
                     return true;
             }
@@ -64,10 +65,13 @@ namespace Database
         public static int RowNum()
         {
             AppDBContext context = new AppDBContext();
+            int rownum;
+            if (context.Items.Count<Item>() == 0)
+                rownum = 0;
+            else
+                rownum = context.Items.Max(x=>x.Id);
 
-            int rowNum = context.Items.Count();
-
-            return rowNum;
+            return rownum;
         }
 
     }
