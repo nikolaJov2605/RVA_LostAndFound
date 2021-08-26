@@ -21,15 +21,15 @@ namespace Front.Commands
         {
             commandHistory.Add(command);
             command.Execute();
-            currentCommandIdx = commandHistory.Count;
-            commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - currentCommandIdx);
+            currentCommandIdx = commandHistory.Count - 1;
+            commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - 1 - currentCommandIdx);
         }
 
         public void Undo()
-        {
+        { 
             if (commandHistory.Count - 1 < 0)
                 return;
-            commandHistory[commandHistory.Count - 1].Unexecute();
+            commandHistory[currentCommandIdx].Unexecute();
             currentCommandIdx--;
         }
 

@@ -6,6 +6,8 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Database;
+using Common;
 
 namespace Server
 {
@@ -13,6 +15,12 @@ namespace Server
     {
         static void Main(string[] args)
         {
+            /*using (AppDBContext context = new AppDBContext())
+            {
+                //Truncate Table to delete all old records.
+                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [Items]");
+            }*/
+
             ServiceHost registrationService = new ServiceHost(typeof(Registration.Registration));
             registrationService.Open();
             Console.WriteLine("Registration service is up...");

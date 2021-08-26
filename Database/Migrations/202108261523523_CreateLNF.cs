@@ -17,6 +17,7 @@
                         Location = c.String(),
                         Description = c.String(),
                         IsFound = c.Boolean(nullable: false),
+                        ItemCommandID = c.Int(nullable: false),
                         Finder_Username = c.String(maxLength: 128),
                         Owner_Username = c.String(maxLength: 128),
                     })

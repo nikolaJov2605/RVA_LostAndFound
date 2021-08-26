@@ -1,5 +1,6 @@
 ﻿using Common;
 using Common.Services;
+using Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Front.Commands
         private string location;
         private string description;
 
-        private int key;
+        private int commandID;
         private Person owner;
 
         public AddItemCommand(string username, string date, string name, string location, string description)
@@ -27,7 +28,7 @@ namespace Front.Commands
             this.name = name;
             this.location = location;
             this.description = description;
-            this.key = -1;
+            this.commandID = 0;
         }
 
         public override void Execute()
@@ -35,20 +36,23 @@ namespace Front.Commands
             ChannelFactory<IAddItem> factory = new ChannelFactory<IAddItem>("AddItem");
             IAddItem proxy = factory.CreateChannel();
 
-            key = proxy.GetAvailableKeyValue();
+            commandID = proxy.GetAvailableCommandID();
             owner = proxy.FindPerson(username);
             //Person finder = proxy.FindPerson(tbPronalazac.Text);
-            Item item = new Item(key, date, name, location, description, owner, null, false);
+            Item item = new Item(date, name, location, description, owner, null, false);
+            item.ItemCommandID = commandID;
 
             proxy.Add(item);
+
         }
 
 
         public override void Unexecute()
         {
-            ChannelFactory<IDeleteItem> factory = new ChannelFactory<IDeleteItem>("DeleteItem");
-            IDeleteItem proxy = factory.CreateChannel();
-            proxy.DeleteItem(key);
+            ChannelFactory<IAddItem> factory = new ChannelFactory<IAddItem>("AddItem");
+            IAddItem proxy = factory.CreateChannel();
+            proxy.UnAdd(commandID);
+
 
         }
     }

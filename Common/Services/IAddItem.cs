@@ -14,9 +14,12 @@ namespace Common.Services
         bool Add(Item item);
 
         [OperationContract]
-        int GetAvailableKeyValue();
+        int GetAvailableCommandID();
 
         [OperationContract]
         Person FindPerson(string username);
+
+        [OperationContract]
+        bool UnAdd(int commandID);
     }
 }

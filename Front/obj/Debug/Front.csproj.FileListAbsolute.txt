@@ -33,12 +33,14 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Databa
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\EntityFramework.xml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.csproj.AssemblyReference.cache
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\AddItem.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Login.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\MainWindow.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Registracija.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\App.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front_MarkupCompile.cache
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front_MarkupCompile.lref
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\AddItem.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Login.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\MainWindow.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Registracija.baml
@@ -49,5 +51,3 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.csproj.CopyComplete
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.exe
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.pdb
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\AddItem.g.cs
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\AddItem.baml

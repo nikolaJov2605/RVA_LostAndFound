@@ -42,11 +42,26 @@ namespace Server.ItemServices
             }
         }
 
-        public int GetAvailableKeyValue()
+        public int GetAvailableCommandID()
         {
-            int keyVal = ItemRepository.RowNum() + 1;
+            int keyVal = ItemRepository.GenerateCommandID();
             Console.WriteLine("Key declared to item is " + keyVal.ToString());
             return keyVal;
+        }
+
+        public bool UnAdd(int commandID)
+        {
+            if (ItemRepository.ExistsCommandID(commandID))
+            {
+                ItemRepository.DeleteByCommandID(commandID);
+                Console.WriteLine("Item successfully deleted from database...");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Item doesn't exist and can't be deleted...");
+                return false;
+            }
         }
     }
 }

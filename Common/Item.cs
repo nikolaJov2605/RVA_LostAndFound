@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -15,9 +17,8 @@ namespace Common
 
         }
 
-        public Item(int id, string date, string title, string location, string description, Person owner, Person finder, bool isFound)
+        public Item(string date, string title, string location, string description, Person owner, Person finder, bool isFound)
         {
-            Id = id;
             Date = date;
             Title = title;
             Location = location;
@@ -26,9 +27,8 @@ namespace Common
             Finder = finder;
             IsFound = isFound;
         }
-        public Item(int id, string date, string title, string location, string description, Person owner, bool isFound)
+        public Item(string date, string title, string location, string description, Person owner, bool isFound)
         {
-            Id = id;
             Date = date;
             Title = title;
             Location = location;
@@ -53,5 +53,7 @@ namespace Common
         public Person Finder { get; set; }
         [DataMember]
         public bool IsFound { get; set; }
+        [DataMember]
+        public int ItemCommandID { get; set; }
     }
 }

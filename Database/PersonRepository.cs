@@ -12,8 +12,10 @@ namespace Database
     {
         public static List<Person> GetPersons()
         {
-            AppDBContext personDBContext = new AppDBContext();
-            return personDBContext.Persons.ToList();
+            using (AppDBContext personDBContext = new AppDBContext())
+            {
+                return personDBContext.Persons.ToList();
+            }
         }
 
         public static void AddPerson(Person p)
