@@ -31,6 +31,7 @@ namespace Front.Views
         {
             InitializeComponent();
             DataContext = new MainDataViewModel(username);
+            dataGrid.Items.Refresh();
         }
 
         private void btnAddItem_Click(object sender, RoutedEventArgs e)

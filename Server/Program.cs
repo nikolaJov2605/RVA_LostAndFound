@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 using Common;
+using Server.Notifications;
 
 namespace Server
 {
@@ -36,6 +37,14 @@ namespace Server
             ServiceHost deleteItemService = new ServiceHost(typeof(DeleteItem));
             deleteItemService.Open();
             Console.WriteLine("DeleteItem service is up...");
+
+            ServiceHost subscriptionService = new ServiceHost(typeof(SubscriptionService));
+            subscriptionService.Open();
+            Console.WriteLine("Subscription service is up...");
+
+            ServiceHost retrieveItems = new ServiceHost(typeof(RetrieveItems));
+            retrieveItems.Open();
+            Console.WriteLine("RetrieveItems service is up...");
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }

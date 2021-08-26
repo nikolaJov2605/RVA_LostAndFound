@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Services;
+using System.ServiceModel;
 
 namespace Front
 {
@@ -14,7 +16,10 @@ namespace Front
         public static PersonModel LoadPerson(string username)
         {
             PersonModel retPerson = new PersonModel();
-            Person person = PersonRepository.FindByUsername(username);
+            ChannelFactory<ILoadPersonInfo> factory = new ChannelFactory<ILoadPersonInfo>("PersonInfo");
+            ILoadPersonInfo proxy = factory.CreateChannel();
+
+            Person person = proxy.Load(username);
             if(person != null)
             {
                 retPerson.Username = person.Username;
