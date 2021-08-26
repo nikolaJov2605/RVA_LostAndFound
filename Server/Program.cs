@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Database;
 using Common;
 using Server.Notifications;
+using Server.SignIn;
 
 namespace Server
 {
@@ -42,9 +43,13 @@ namespace Server
             subscriptionService.Open();
             Console.WriteLine("Subscription service is up...");
 
-            ServiceHost retrieveItems = new ServiceHost(typeof(RetrieveItems));
-            retrieveItems.Open();
+            ServiceHost retrieveItemsService = new ServiceHost(typeof(RetrieveItems));
+            retrieveItemsService.Open();
             Console.WriteLine("RetrieveItems service is up...");
+
+            ServiceHost loadPersonService = new ServiceHost(typeof(LoadPersonInfo));
+            loadPersonService.Open();
+            Console.WriteLine("LoadPersonService service is up...");
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }
