@@ -7,20 +7,33 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Front.ViewModel
 {
     public class MainDataViewModel
     {
         public PersonModel Person { get; set; }
-        public List<Item> Items { get; set; }
+        private static ObservableCollection<ItemModel> items;
+
+        public static ObservableCollection<ItemModel> Items
+        {
+            get { return items; }
+            set { items = value; }
+        }
 
         public MainDataViewModel(string username)
         {
             PersonModel person = LoadLoggedPerson.LoadPerson(username);
             Person = person;
-
-            Items = new List<Item>(LoadItemsInfo.LoadItems());
+            //items = new ObservableCollection<ItemModel>(LoadItemsInfo.LoadItems());
+            UpdateGrid();
         }
+
+        public static void UpdateGrid()
+        {
+            items = new ObservableCollection<ItemModel>(LoadItemsInfo.LoadItems());
+        }
+
     }
 }

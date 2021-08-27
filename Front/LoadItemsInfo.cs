@@ -1,6 +1,7 @@
 ﻿using Common;
 using Common.Services;
 using Database;
+using Front.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,29 @@ namespace Front
 {
     public class LoadItemsInfo
     {
-        public static List<Item> LoadItems()
+        public static List<ItemModel> LoadItems()
         {
             ChannelFactory<IRetrieveItems> factory = new ChannelFactory<IRetrieveItems>("RetrieveItems");
             IRetrieveItems proxy = factory.CreateChannel();
+            List<Item> tempList = proxy.RetrieveAllItems();
+            List<ItemModel> retList = new List<ItemModel>();
+            ItemModel retItem = new ItemModel();
 
-            return proxy.RetrieveAllItems();
+            foreach (Item i in tempList)
+            {
+                retList.Add(new ItemModel
+                {
+                    Id = i.Id,
+                    Date = i.Date,
+                    Title = i.Title,
+                    Location = i.Location,
+                    Description = i.Description,
+                    OwnerUsername = i.Owner.Username,
+                    FinderUsername = null,
+                    IsFound = i.IsFound
+                });
+            }
+            return retList;
         }
     }
 }

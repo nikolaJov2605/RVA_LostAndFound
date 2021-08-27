@@ -1,7 +1,10 @@
-﻿using Front.Commands;
+﻿using Common;
+using Front.Commands;
+using Front.Model;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -31,8 +34,9 @@ namespace Front.Views
         {
             InitializeComponent();
             DataContext = new MainDataViewModel(username);
-            dataGrid.Items.Refresh();
+            
         }
+
 
         private void btnAddItem_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +52,11 @@ namespace Front.Views
         private void btnRedo_Click(object sender, RoutedEventArgs e)
         {
             CommandExecutor.Invoker.Redo();
+        }
+
+        private void dataGridItems_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            dataGridItems.ItemsSource = MainDataViewModel.Items;
         }
     }
 }

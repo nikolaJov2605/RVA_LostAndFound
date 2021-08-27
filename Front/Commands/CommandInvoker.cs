@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Common.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +25,11 @@ namespace Front.Commands
             command.Execute();
             currentCommandIdx = commandHistory.Count - 1;
             commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - 1 - currentCommandIdx);
+
+            InstanceContext callback = new InstanceContext(new Callback());
+            DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
+            ISubscription proxy = factory.CreateChannel();
+            proxy.NotifyAll();
         }
 
         public void Undo()
@@ -31,6 +38,11 @@ namespace Front.Commands
                 return;
             commandHistory[currentCommandIdx].Unexecute();
             currentCommandIdx--;
+
+            InstanceContext callback = new InstanceContext(new Callback());
+            DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
+            ISubscription proxy = factory.CreateChannel();
+            proxy.NotifyAll();
         }
 
         public void Redo()
@@ -40,7 +52,12 @@ namespace Front.Commands
 
             currentCommandIdx++;
             commandHistory[currentCommandIdx].Execute();
-            
+
+            InstanceContext callback = new InstanceContext(new Callback());
+            DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
+            ISubscription proxy = factory.CreateChannel();
+            proxy.NotifyAll();
+
         }
     }
 }

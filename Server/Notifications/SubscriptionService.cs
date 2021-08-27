@@ -8,13 +8,18 @@ using System.Threading.Tasks;
 
 namespace Server.Notifications
 {
-    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.PerCall)]
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)]
     public class SubscriptionService : ISubscription
     {
-        private static List<IClientNotification> clientList = new List<IClientNotification>();
+        private static List<IClientNotification> clientList;
         private int registeredUsersCnt;
+        private IClientNotification client = null;
 
-        public SubscriptionService() { }
+        public SubscriptionService()
+        {
+            registeredUsersCnt = 0;
+            clientList = new List<IClientNotification>();
+        }
 
         public void NotifyAll()
         {
@@ -24,26 +29,24 @@ namespace Server.Notifications
             }
         }
 
-        public int Subscribe()
+        public void Subscribe()
         {
-            IClientNotification registeredClient = OperationContext.Current.GetCallbackChannel<IClientNotification>();
-            if(!clientList.Contains(registeredClient))
+            client = OperationContext.Current.GetCallbackChannel<IClientNotification>();
+            if(!clientList.Contains(client) && client != null)
             {
-                clientList.Add(registeredClient);
+                clientList.Add(client);
                 registeredUsersCnt++;
             }
-            return registeredUsersCnt;
         }
 
-        public int Unsubscribe()
+        public void Unsubscribe()
         {
-            IClientNotification client = OperationContext.Current.GetCallbackChannel<IClientNotification>();
+            client = OperationContext.Current.GetCallbackChannel<IClientNotification>();
             if(clientList.Contains(client))
             {
                 clientList.Remove(client);
                 registeredUsersCnt--;
             }
-            return registeredUsersCnt;
         }
     }
 }

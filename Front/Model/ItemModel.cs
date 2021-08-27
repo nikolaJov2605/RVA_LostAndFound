@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Front.Model
 {
-    public class ItemModel
+    public class ItemModel : INotifyPropertyChanged
     {
         private int id;
         private string date;
@@ -30,6 +31,8 @@ namespace Front.Model
             this.finderUsername = finderUsername;
             this.isFound = isFound;
         }
+
+        public ItemModel() { }
 
         public int Id
         {
@@ -127,6 +130,7 @@ namespace Front.Model
                 }
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

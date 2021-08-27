@@ -56,8 +56,20 @@ namespace Front.Views
                 ChannelFactory<ISignIn> factory = new ChannelFactory<ISignIn>("UserSignIn");
                 ISignIn proxy = factory.CreateChannel();
 
+                /*DuplexChannelFactory<ISubscription> channelFactory = new DuplexChannelFactory<ISubscription>("UserSubscription");
+                ISubscription subscriptionProxy = channelFactory.CreateChannel();*/
+
+                /*var uri = "net.tcp://localhost:4000/ISubscription";
+                var binding = new NetTcpBinding(SecurityMode.None);*/
+
+                InstanceContext callback = new InstanceContext(new Callback());
+                var channel = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
+                ISubscription subscriptionProxy = channel.CreateChannel();
+
                 if (proxy.SignIn(tbUsername.Text, tbPasswd.Text) == true)
                 {
+                    subscriptionProxy.Subscribe();
+
                     MainWindow mainWindow = new MainWindow(tbUsername.Text);
                     this.Close();
                     mainWindow.Show();

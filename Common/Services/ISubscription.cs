@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Common.Services
 {
-    [ServiceContract(CallbackContract = typeof(IClientNotification))]
+    [ServiceContract(CallbackContract = typeof(IClientNotification), SessionMode = SessionMode.Required)]
     public interface ISubscription
     {
-        [OperationContract]
-        int Subscribe();
         [OperationContract(IsOneWay = true)]
+        void Subscribe();
+        [OperationContract(IsOneWay = true)]
+        void Unsubscribe();
+        [OperationContract(IsOneWay = false)]
         void NotifyAll();
-        [OperationContract]
-        int Unsubscribe();
     }
 }

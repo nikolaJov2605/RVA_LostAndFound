@@ -13,10 +13,7 @@ namespace Server.ItemServices
     {
         public List<Item> RetrieveAllItems()
         {
-            using (AppDBContext context = new AppDBContext())
-            {
-                return context.Items.ToList();
-            }
+            return ItemRepository.GetItems();
         }
     }
 }
