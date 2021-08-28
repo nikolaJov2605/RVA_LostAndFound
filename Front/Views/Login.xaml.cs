@@ -62,7 +62,7 @@ namespace Front.Views
                 /*var uri = "net.tcp://localhost:4000/ISubscription";
                 var binding = new NetTcpBinding(SecurityMode.None);*/
 
-                InstanceContext callback = new InstanceContext(new Callback());
+                InstanceContext callback = new InstanceContext(new MainWindow());
                 var channel = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
                 ISubscription subscriptionProxy = channel.CreateChannel();
 

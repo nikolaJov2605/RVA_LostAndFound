@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.Services;
 using Front.Commands;
 using Front.Model;
 using Front.ViewModel;
@@ -23,7 +24,7 @@ namespace Front.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IClientNotification
     {
         public MainWindow()
         {
@@ -54,9 +55,14 @@ namespace Front.Views
             CommandExecutor.Invoker.Redo();
         }
 
-        private void dataGridItems_SourceUpdated(object sender, DataTransferEventArgs e)
+        public void NotifyForChanges()
         {
+            MainDataViewModel.Items = LoadItemsInfo.LoadItems();
+            //dataGridItems.ItemsSource = MainDataViewModel.Items;
+            //dataGridItems.Items.Refresh();
             dataGridItems.ItemsSource = MainDataViewModel.Items;
+            dataGridItems.Items.Refresh();
+           // dataGridItems.Items.Refresh();
         }
     }
 }

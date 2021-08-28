@@ -4,6 +4,7 @@ using Database;
 using Front.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -13,12 +14,12 @@ namespace Front
 {
     public class LoadItemsInfo
     {
-        public static List<ItemModel> LoadItems()
+        public static ObservableCollection<ItemModel> LoadItems()
         {
             ChannelFactory<IRetrieveItems> factory = new ChannelFactory<IRetrieveItems>("RetrieveItems");
             IRetrieveItems proxy = factory.CreateChannel();
             List<Item> tempList = proxy.RetrieveAllItems();
-            List<ItemModel> retList = new List<ItemModel>();
+            ObservableCollection<ItemModel> retList = new ObservableCollection<ItemModel>();
             ItemModel retItem = new ItemModel();
 
             foreach (Item i in tempList)

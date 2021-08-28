@@ -1,4 +1,5 @@
 ﻿using Common.Services;
+using Front.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Front.Commands
             currentCommandIdx = commandHistory.Count - 1;
             commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - 1 - currentCommandIdx);
 
-            InstanceContext callback = new InstanceContext(new Callback());
+            InstanceContext callback = new InstanceContext(new MainWindow());
             DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
             ISubscription proxy = factory.CreateChannel();
             proxy.NotifyAll();
@@ -39,7 +40,7 @@ namespace Front.Commands
             commandHistory[currentCommandIdx].Unexecute();
             currentCommandIdx--;
 
-            InstanceContext callback = new InstanceContext(new Callback());
+            InstanceContext callback = new InstanceContext(new MainWindow());
             DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
             ISubscription proxy = factory.CreateChannel();
             proxy.NotifyAll();
@@ -53,7 +54,7 @@ namespace Front.Commands
             currentCommandIdx++;
             commandHistory[currentCommandIdx].Execute();
 
-            InstanceContext callback = new InstanceContext(new Callback());
+            InstanceContext callback = new InstanceContext(new MainWindow());
             DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
             ISubscription proxy = factory.CreateChannel();
             proxy.NotifyAll();
