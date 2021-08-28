@@ -35,7 +35,7 @@ namespace Front.Views
         {
             InitializeComponent();
             DataContext = new MainDataViewModel(username);
-            
+            dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
         }
 
 
@@ -57,10 +57,8 @@ namespace Front.Views
 
         public void NotifyForChanges()
         {
-            MainDataViewModel.Items = LoadItemsInfo.LoadItems();
-            //dataGridItems.ItemsSource = MainDataViewModel.Items;
-            //dataGridItems.Items.Refresh();
-            dataGridItems.ItemsSource = MainDataViewModel.Items;
+            var items = LoadItemsInfo.LoadItems();
+            dataGridItems.ItemsSource = items;
             dataGridItems.Items.Refresh();
            // dataGridItems.Items.Refresh();
         }

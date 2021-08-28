@@ -14,7 +14,7 @@
                 <Label x:Name="lblLastName" Content="{Binding Person.LastName}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Path=Items}" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755">
+        <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" CanUserAddRows="False" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
