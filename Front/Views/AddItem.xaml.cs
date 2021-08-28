@@ -24,7 +24,10 @@ namespace Front.Views
     /// </summary>
     public partial class AddItem : Window
     {
-        public AddItem(string username) : base()
+        private static AddItem instance;
+        private MainWindow mainWindow;
+
+        private AddItem(string username, MainWindow mw) : base()
         {
             InitializeComponent();
 
@@ -45,6 +48,20 @@ namespace Front.Views
             tbVlasnik.Text = "Unesite korisničko ime vlasnika";
             tbVlasnik.Foreground = Brushes.LightSlateGray;
 
+            mainWindow = mw;
+
+        }
+
+        public static AddItem Instance(string username, MainWindow mw)
+        {
+            if (instance == null)
+                instance = new AddItem(username, mw);
+            return instance;
+        }
+
+        public static void DeleteInstance()
+        {
+            instance = null;
         }
 
         private void btnRegisterAdd_Click(object sender, RoutedEventArgs e)
@@ -87,9 +104,12 @@ namespace Front.Views
             {
                 Command addItem = new AddItemCommand(tbVlasnik.Text, dpDate.Text, tbNaziv.Text, tbLokacija.Text, tbOpis.Text);
 
-                CommandExecutor.Invoker.AddAndExecuteCommand(addItem);
+                CommandExecutor.Invoker.AddAndExecuteCommand(addItem, mainWindow);
 
                 this.Close();
+
+                DeleteInstance();
+                
             }
             else
                 return;
@@ -165,6 +185,11 @@ namespace Front.Views
                 tbVlasnik.Text = "Unesite korisničko ime vlasnika";
                 tbVlasnik.Foreground = Brushes.LightSlateGray;
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            DeleteInstance();
         }
     }
 }

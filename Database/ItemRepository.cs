@@ -69,12 +69,12 @@ namespace Database
             using (AppDBContext context = new AppDBContext())
             {
                 int id;
-                /*if (context.Items.Count<Item>() == 0)
-                    rownum = 0;
+                if (context.Items.Count<Item>() == 0)
+                    id = 0;
                 else
-                    rownum = context.Items.Max(x=>x.Id);*/
+                    id = context.Items.Max(x=>x.Id);
 
-                id = (int)DateTime.Now.ToUniversalTime().Subtract(new DateTime(2020, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+                //id = (int)DateTime.Now.ToUniversalTime().Subtract(new DateTime(2020, 8, 28, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
 
                 return id;
             }

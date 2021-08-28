@@ -22,6 +22,7 @@ namespace Front.Views
     /// </summary>
     public partial class Login : Window
     {
+        MainWindow mainWindow;
         public Login()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Front.Views
 
             tbPasswd.Text = "Unesite lozinku";
             tbPasswd.Foreground = Brushes.LightSlateGray;
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -62,15 +64,18 @@ namespace Front.Views
                 /*var uri = "net.tcp://localhost:4000/ISubscription";
                 var binding = new NetTcpBinding(SecurityMode.None);*/
 
-                InstanceContext callback = new InstanceContext(new MainWindow());
-                var channel = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
-                ISubscription subscriptionProxy = channel.CreateChannel();
+                //MainWindow mw = MainWindow.MainWindowInstance();
 
                 if (proxy.SignIn(tbUsername.Text, tbPasswd.Text) == true)
                 {
+                    mainWindow = MainWindow.MainWindowInstance(tbUsername.Text);
+
+                    InstanceContext callback = new InstanceContext(mainWindow);
+                    var channel = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
+                    ISubscription subscriptionProxy = channel.CreateChannel();
+
                     subscriptionProxy.Subscribe();
 
-                    MainWindow mainWindow = new MainWindow(tbUsername.Text);
                     this.Close();
                     mainWindow.Show();
                 }

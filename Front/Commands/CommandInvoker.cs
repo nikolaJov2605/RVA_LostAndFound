@@ -17,17 +17,18 @@ namespace Front.Commands
         public CommandInvoker()
         {
             commandHistory = new List<Command>();
-            currentCommandIdx = 0;
+            currentCommandIdx = -1;
         }
 
-        public void AddAndExecuteCommand(Command command)
+        public void AddAndExecuteCommand(Command command, MainWindow mw)
         {
             commandHistory.Add(command);
             command.Execute();
             currentCommandIdx = commandHistory.Count - 1;
             commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - 1 - currentCommandIdx);
 
-            InstanceContext callback = new InstanceContext(new MainWindow());
+            mw = MainWindow.MainWindowInstance();
+            InstanceContext callback = new InstanceContext(mw);
             DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
             ISubscription proxy = factory.CreateChannel();
             proxy.NotifyAll();
@@ -35,26 +36,29 @@ namespace Front.Commands
 
         public void Undo()
         { 
-            if (commandHistory.Count - 1 < 0)
+            if (currentCommandIdx < 0)
                 return;
             commandHistory[currentCommandIdx].Unexecute();
-            currentCommandIdx--;
 
-            InstanceContext callback = new InstanceContext(new MainWindow());
+            MainWindow mw = MainWindow.MainWindowInstance();
+            InstanceContext callback = new InstanceContext(mw);
             DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
             ISubscription proxy = factory.CreateChannel();
             proxy.NotifyAll();
+
+            currentCommandIdx--;
         }
 
         public void Redo()
         {
-            if (currentCommandIdx + 1 > commandHistory.Count)
+            if (currentCommandIdx + 1 >= commandHistory.Count)
                 return;
 
             currentCommandIdx++;
             commandHistory[currentCommandIdx].Execute();
 
-            InstanceContext callback = new InstanceContext(new MainWindow());
+            MainWindow mw = MainWindow.MainWindowInstance();
+            InstanceContext callback = new InstanceContext(mw);
             DuplexChannelFactory<ISubscription> factory = new DuplexChannelFactory<ISubscription>(callback, "UserSubscription");
             ISubscription proxy = factory.CreateChannel();
             proxy.NotifyAll();

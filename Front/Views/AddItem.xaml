@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="AddItem" Height="400" Width="488">
+        Title="AddItem" Height="400" Width="488" Closed="Window_Closed">
     <Grid Margin="1,2,-6.4,-1.8">
         <Label x:Name="lblCaption" Content="Dodaj predmet" HorizontalAlignment="Center" Margin="25,10,24.2,0" VerticalAlignment="Top" Height="69" Width="394" FontSize="40" HorizontalContentAlignment="Center"/>
         <Label x:Name="lblDatum" Content="Datum:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>

@@ -45,7 +45,6 @@ namespace Server.ItemServices
         public int GetAvailableCommandID()
         {
             int keyVal = ItemRepository.GenerateCommandID();
-            Console.WriteLine("Key declared to item is " + keyVal.ToString());
             return keyVal;
         }
 

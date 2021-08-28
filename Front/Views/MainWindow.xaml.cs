@@ -26,22 +26,44 @@ namespace Front.Views
     /// </summary>
     public partial class MainWindow : Window, IClientNotification
     {
-        public MainWindow()
+        private static MainWindow mainWindowInstance;
+
+        private MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainDataViewModel();
+            dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
         }
 
-        public MainWindow(string username) : base()
+        private MainWindow(string username) : base()
         {
             InitializeComponent();
             DataContext = new MainDataViewModel(username);
             dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
         }
 
+        public static MainWindow MainWindowInstance()
+        {
+            if (mainWindowInstance == null)
+                mainWindowInstance = new MainWindow();
+            return mainWindowInstance;
+        }
+
+        public static MainWindow MainWindowInstance(string username)
+        {
+            if (mainWindowInstance == null)
+                mainWindowInstance = new MainWindow(username);
+            return mainWindowInstance;
+        }
+
+        public static void DeleteInstance()
+        {
+            mainWindowInstance = null;
+        }
 
         private void btnAddItem_Click(object sender, RoutedEventArgs e)
         {
-            AddItem addItemWindow = new AddItem(lblUsername.Content.ToString());
+            AddItem addItemWindow = AddItem.Instance(lblUsername.Content.ToString(), mainWindowInstance);
             addItemWindow.Show();
         }
 
@@ -57,10 +79,14 @@ namespace Front.Views
 
         public void NotifyForChanges()
         {
-            var items = LoadItemsInfo.LoadItems();
-            dataGridItems.ItemsSource = items;
-            dataGridItems.Items.Refresh();
-           // dataGridItems.Items.Refresh();
+            MainDataViewModel.Items = LoadItemsInfo.LoadItems();
+            mainWindowInstance.dataGridItems.ItemsSource = null;
+            mainWindowInstance.dataGridItems.ItemsSource = MainDataViewModel.Items;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            DeleteInstance();
         }
     }
 }
