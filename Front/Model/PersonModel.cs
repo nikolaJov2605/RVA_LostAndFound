@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 
 namespace Front.Model
 {
@@ -12,6 +13,8 @@ namespace Front.Model
         private string username;
         private string name;
         private string lastName;
+        private string birthdate;
+        private Role role;
 
         public string Username
         {
@@ -21,7 +24,8 @@ namespace Front.Model
                 if (username != value)
                 {
                     username = value;
-                    RaisePropertyChanged("Username");
+                    RaisePropertyChanged("Name");
+                    RaisePropertyChanged("FullName");
                 }
             }
         }
@@ -51,6 +55,36 @@ namespace Front.Model
                     RaisePropertyChanged("LastName");
                     RaisePropertyChanged("FullName");
                 }
+            }
+        }
+
+        public string Birthdate
+        {
+            get { return birthdate; }
+            set
+            {
+                if(birthdate != value)
+                {
+                    birthdate = value;
+                    RaisePropertyChanged("Birthday");
+                }
+            }
+
+        }
+
+        public Role Role
+        {
+            get
+            {
+                return role;
+            }
+            set
+            {
+                if (role != value)
+                {
+                    role = value;
+                    RaisePropertyChanged("Role");
+                }    
             }
         }
 

@@ -1,6 +1,8 @@
 ﻿using Common;
 using Common.Services;
 using Database;
+using Database.ItemCommands;
+using Database.ItemCommands.ItemsQueries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,8 @@ namespace Server.ItemServices
     {
         public List<Item> RetrieveAllItems()
         {
-            return ItemRepository.GetItems();
+            ItemQueries retrieveAll = new RetrieveAllItemsQuery();
+            return ItemRepository.ExecuteQuery(retrieveAll);
         }
     }
 }

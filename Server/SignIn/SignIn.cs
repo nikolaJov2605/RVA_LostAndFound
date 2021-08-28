@@ -1,11 +1,9 @@
 ﻿using Common;
 using Common.Services;
 using Database;
+using Database.PersonCommands.SinglePersonsQueries;
+using Database.PersonsCommands;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Server.SignIn
 {
@@ -13,7 +11,8 @@ namespace Server.SignIn
     {
         bool ISignIn.SignIn(string username, string password)
         {
-            Person person = PersonRepository.FindByUsername(username);
+            SinglePersonQuery personQuery = new FindByUsernameQuery(username);
+            Person person = PersonRepository.ExecuteQuery(personQuery);
             if (person != null && person.Password == password)
             {
                 // login

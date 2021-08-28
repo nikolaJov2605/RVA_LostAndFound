@@ -5,72 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using Database.PersonCommands;
+using Database.PersonCommands.PersonsQueries;
+using Database.PersonsCommands;
 
 namespace Database
 {
     public static class PersonRepository
     {
-        public static List<Person> GetPersons()
+        public static void ExecuteCommand(PersonDBUpdateCommand command)
         {
-            using (AppDBContext personDBContext = new AppDBContext())
-            {
-                return personDBContext.Persons.ToList();
-            }
+            command.Execute();
         }
 
-        public static void AddPerson(Person p)
+        public static List<Person> ExecuteQuery(PersonQueries query)
         {
-            AppDBContext personDBContext = new AppDBContext();
-            try
-            {
-                personDBContext.Persons.Add(p);
-                personDBContext.SaveChanges();
-            }
-            catch(SqlException e)
-            {
-                Console.Write(e.Message);
-            }
-            catch(System.Data.Entity.Infrastructure.DbUpdateException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            return query.Execute();
         }
-
-        public static bool Exists(Person p)
+        public static bool ExecuteCheck(PersonCheckings check)
         {
-
-            AppDBContext context = new AppDBContext();
-
-            try
-            {
-                var query = context.Persons.Where(x => x.Username == p.Username).First<Person>();
-                if (query != null)
-                    return true;
-            }
-            catch
-            {
-                return false;
-            }
-
-            return false;
-            
+            return check.Execute();
         }
-
-        public static Person FindByUsername(string username)
+        public static Person ExecuteQuery(SinglePersonQuery query)
         {
-            AppDBContext context = new AppDBContext();
-
-            try
-            {
-                var query = context.Persons.Where(x => x.Username == username).First<Person>();
-                if (query != null)
-                    return query;
-            }
-            catch
-            {
-                return null;
-            }
-            return null;
+            return query.Execute();
         }
     }
 }

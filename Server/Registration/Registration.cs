@@ -2,6 +2,9 @@
 using Common.Exceptions;
 using Common.Services;
 using Database;
+using Database.PersonCommands;
+using Database.PersonCommands.PersonsCheckings;
+using Database.PersonCommands.PersonUpdateCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +18,15 @@ namespace Server.Registration
     {
         public bool Register(Person person)
         {
-
-            if(PersonRepository.Exists(person))
+            PersonCheckings personExistsCheck = new PersonExistsCheck(person);
+            if(PersonRepository.ExecuteCheck(personExistsCheck))
             {
                 return false;
             }
             else
             {
-                PersonRepository.AddPerson(person);
+                PersonDBUpdateCommand addPerson = new AddPersonDBCommand(person);
+                PersonRepository.ExecuteCommand(addPerson);
                 return true;
             }
         }

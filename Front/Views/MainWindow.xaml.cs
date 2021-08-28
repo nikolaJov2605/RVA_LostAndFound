@@ -88,5 +88,11 @@ namespace Front.Views
         {
             DeleteInstance();
         }
+
+        private void btnUpdateUser_Click_1(object sender, RoutedEventArgs e)
+        {
+            ModifyUser modifyUser = ModifyUser.Instance(lblUsername.Content.ToString());
+            modifyUser.Show();
+        }
     }
 }

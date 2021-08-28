@@ -1,11 +1,8 @@
 ﻿using Common;
 using Common.Services;
 using Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Database.PersonCommands.SinglePersonsQueries;
+using Database.PersonsCommands;
 
 namespace Server.SignIn
 {
@@ -13,7 +10,8 @@ namespace Server.SignIn
     {
         public Person Load(string username)
         {
-            Person person = PersonRepository.FindByUsername(username);
+            SinglePersonQuery personQuery = new FindByUsernameQuery(username);
+            Person person = PersonRepository.ExecuteQuery(personQuery);
             return person;
         }
     }

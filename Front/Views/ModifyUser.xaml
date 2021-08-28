@@ -1,0 +1,22 @@
+﻿<Window x:Class="Front.Views.ModifyUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front.Views"
+        mc:Ignorable="d"
+        Title="ModifyUser" Height="353.133" Width="420" Closed="Window_Closed">
+    <Grid Margin="0,0,-0.4,-7.8">
+        <Label x:Name="lblCaption" Content="Registracija" HorizontalAlignment="Center" Margin="10,10,-0.4,0" VerticalAlignment="Top" Height="69" Width="784" FontSize="40" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblIme" Content="Ime:" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>
+        <Label x:Name="lblPrezime" Content="Prezime:" HorizontalAlignment="Left" Margin="30,136,0,0" VerticalAlignment="Top" Width="85" FontSize="20" RenderTransformOrigin="0.48,-0.163"/>
+        <Label x:Name="lblDatum" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <TextBox x:Name="tbIme" HorizontalAlignment="Left" Text="{Binding Person.Name}" Height="23" Margin="185,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Text="{Binding Person.LastName}" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label x:Name="lblBirthdate" HorizontalAlignment="Left" Content="{Binding Person.Birthdate}" Height="23" Margin="185,185,0,0" VerticalAlignment="Top" Width="190"/>
+        <Label x:Name="tbUsername" HorizontalAlignment="Left" Content="{Binding Person.Username}" Height="23" Margin="185,227,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="btnRegister" Content="Izmeni" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="394" Height="32" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>

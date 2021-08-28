@@ -55,12 +55,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDBContext.cs" />
+    <Compile Include="ItemCommands\ItemCheckings.cs" />
+    <Compile Include="ItemCommands\ItemGeneration.cs" />
+    <Compile Include="ItemCommands\ItemsCheckings\CommandIDExistCheck.cs" />
+    <Compile Include="ItemCommands\ItemsCheckings\KeyExistCheck.cs" />
+    <Compile Include="ItemCommands\ItemQueries.cs" />
+    <Compile Include="ItemCommands\ItemsGenerateCommands\GenerateCommandID.cs" />
+    <Compile Include="ItemCommands\ItemsQueries\RetrieveAllItemsQuery.cs" />
+    <Compile Include="ItemCommands\ItemsUpdateCommands\DeleteItemByCommandID.cs" />
+    <Compile Include="ItemCommands\ItemsUpdateCommands\DeleteItemDBCommand.cs" />
+    <Compile Include="ItemCommands\ItemDBUpdateCommand.cs" />
+    <Compile Include="ItemCommands\ItemsUpdateCommands\AddItemDBCommand.cs" />
     <Compile Include="ItemRepository.cs" />
     <Compile Include="Migrations\202108261523523_CreateLNF.cs" />
     <Compile Include="Migrations\202108261523523_CreateLNF.designer.cs">
       <DependentUpon>202108261523523_CreateLNF.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PersonCommands\PersonCheckings.cs" />
+    <Compile Include="PersonCommands\PersonDBUpdateCommand.cs" />
+    <Compile Include="PersonCommands\PersonQueries.cs" />
+    <Compile Include="PersonCommands\PersonsCheckings\PersonExistsCheck.cs" />
+    <Compile Include="PersonCommands\PersonsQueries\RetrieveAllPersons.cs" />
+    <Compile Include="PersonCommands\PersonUpdateCommands\AddPersonDBCommand.cs" />
+    <Compile Include="PersonCommands\SinglePersonQuery.cs" />
+    <Compile Include="PersonCommands\SinglePersonsQueries\FindByUsernameQuery.cs" />
     <Compile Include="PersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +98,7 @@
       <DependentUpon>202108261523523_CreateLNF.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

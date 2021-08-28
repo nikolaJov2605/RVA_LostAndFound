@@ -25,6 +25,8 @@ namespace Front
                 retPerson.Username = person.Username;
                 retPerson.Name = person.Name;
                 retPerson.LastName = person.LastName;
+                retPerson.Birthdate = person.BirthDate;
+                retPerson.Role = person.Role;
 
                 return retPerson;
             }

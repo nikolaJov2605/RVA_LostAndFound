@@ -1,6 +1,12 @@
 ﻿using Common;
 using Common.Services;
 using Database;
+using Database.ItemCommands;
+using Database.ItemCommands.ItemsCheckings;
+using Database.ItemCommands.ItemsGenerateCommands;
+using Database.ItemCommands.ItemsUpdateCommands;
+using Database.PersonCommands.SinglePersonsQueries;
+using Database.PersonsCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,23 +19,17 @@ namespace Server.ItemServices
     {
         public bool Add(Item item)
         {
-            /*if (ItemRepository.Exists(item))
-            {
-                Console.WriteLine("Item " + item.Title + " failed to be added to database");
-                return false;
-            }
-            else
-            {*/
-                ItemRepository.AddItem(item);
-                Console.WriteLine("Item " + item.Title + " added to database");
-                return true;
-           // }
+            ItemDBUpdateCommand addItem = new AddItemCommand(item);
+            ItemRepository.ExecuteCommand(addItem);
+            Console.WriteLine("Item " + item.Title + " added to database");
+            return true;
         }
 
 
         public Person FindPerson(string username)
         {
-            Person person = PersonRepository.FindByUsername(username);
+            SinglePersonQuery personQuery = new FindByUsernameQuery(username);
+            Person person = PersonRepository.ExecuteQuery(personQuery);
             if(person != null)
             {
                 Console.WriteLine("Person " + username + " found in database");
@@ -44,15 +44,18 @@ namespace Server.ItemServices
 
         public int GetAvailableCommandID()
         {
-            int keyVal = ItemRepository.GenerateCommandID();
+            ItemGeneration commandIDGeneration = new GenerateCommandID();
+            int keyVal = ItemRepository.ModifyItem(commandIDGeneration);
             return keyVal;
         }
 
         public bool UnAdd(int commandID)
         {
-            if (ItemRepository.ExistsCommandID(commandID))
+            ItemCheckings commandIdCheck = new CommandIDExistCheck(commandID);
+            if (ItemRepository.ExecuteCheck(commandIdCheck))
             {
-                ItemRepository.DeleteByCommandID(commandID);
+                ItemDBUpdateCommand deleteByCommandID = new DeleteItemByCommandID(commandID);
+                ItemRepository.ExecuteCommand(deleteByCommandID);
                 Console.WriteLine("Item successfully deleted from database...");
                 return true;
             }

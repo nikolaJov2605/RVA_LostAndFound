@@ -1,4 +1,6 @@
 ﻿using Common;
+using Database.ItemCommands;
+using Database.ItemCommands.ItemsQueries;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,101 +12,21 @@ namespace Database
 {
     public static class ItemRepository
     {
-
-
-        public static List<Item> GetItems()
+        public static void ExecuteCommand(ItemDBUpdateCommand command)
         {
-            using (AppDBContext itemDBContext = new AppDBContext())
-            {
-                var query = itemDBContext.Items.Include("Owner").Include("Finder").ToList();
-                return query;
-            }
+            command.Execute();
         }
-        public static void AddItem(Item i)
+        public static List<Item> ExecuteQuery(ItemQueries query)
         {
-            using (AppDBContext appDBContext = new AppDBContext())
-            {
-                var dataPerson = appDBContext.Persons.FirstOrDefault(x => x.Username == i.Owner.Username);
-                //var key = appDBContext.Items.Count();
-                //Item toAdd = new Item(i.Id, i.Date, i.Title, i.Location, i.Description, dataPerson, false);
-                Item toAdd = i;
-                toAdd.Owner = dataPerson;
-
-                appDBContext.Items.Add(toAdd);
-
-                appDBContext.SaveChanges();
-            }
-
+            return query.Execute();
         }
-
-        public static void DeleteItem(int key)
+        public static bool ExecuteCheck(ItemCheckings check)
         {
-            using (AppDBContext appDBContext = new AppDBContext())
-            {
-                var query = appDBContext.Items.Where(x => x.Id == key).First<Item>();
-                appDBContext.Items.Remove(query);
-                appDBContext.SaveChanges();
-            }
+            return check.Execute();
         }
-
-        public static bool Exists(int key)
+        public static int ModifyItem(ItemGeneration generation)
         {
-            AppDBContext context = new AppDBContext();
-
-            try
-            {
-                var query = context.Items.Where(x => x.Id == key).First<Item>();
-                if (query != null)
-                    return true;
-            }
-            catch
-            {
-                return false;
-            }
-            return false;
-        }
-
-        public static int GenerateCommandID()
-        {
-            using (AppDBContext context = new AppDBContext())
-            {
-                int id;
-                if (context.Items.Count<Item>() == 0)
-                    id = 0;
-                else
-                    id = context.Items.Max(x=>x.Id);
-
-                //id = (int)DateTime.Now.ToUniversalTime().Subtract(new DateTime(2020, 8, 28, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
-
-                return id;
-            }
-        }
-
-        public static bool ExistsCommandID(int commandID)
-        {
-            AppDBContext context = new AppDBContext();
-
-            try
-            {
-                var query = context.Items.Where(x => x.ItemCommandID == commandID).First<Item>();
-                if (query != null)
-                    return true;
-            }
-            catch
-            {
-                return false;
-            }
-            return false;
-        }
-
-        public static void DeleteByCommandID(int commandID)
-        {
-            using (AppDBContext appDBContext = new AppDBContext())
-            {
-                var query = appDBContext.Items.Where(x => x.ItemCommandID == commandID).First<Item>();
-                appDBContext.Items.Remove(query);
-                appDBContext.SaveChanges();
-            }
+            return generation.Execute();
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using Common;
 using Common.Services;
 using Database;
+using Database.ItemCommands;
+using Database.ItemCommands.ItemsCheckings;
+using Database.ItemCommands.ItemsUpdateCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +33,11 @@ namespace Server.ItemServices
 
         bool IDeleteItem.DeleteItem(int key)
         {
-            if (ItemRepository.Exists(key))
+            ItemCheckings check = new KeyExistCheck(key);
+            if (ItemRepository.ExecuteCheck(check))
             {
-                ItemRepository.DeleteItem(key);
+                ItemDBUpdateCommand deleteCommand = new DeleteItemDBCommand(key);
+                ItemRepository.ExecuteCommand(deleteCommand);
                 Console.WriteLine("Item successfully deleted from database...");
                 return true;
             }
