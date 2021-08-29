@@ -13,7 +13,7 @@ namespace Front.ViewModel
 {
     public class MainDataViewModel
     {
-        public PersonModel Person { get; set; }
+        public static PersonModel Person { get; set; }
         private static ObservableCollection<ItemModel> items;
 
         public static ObservableCollection<ItemModel> Items

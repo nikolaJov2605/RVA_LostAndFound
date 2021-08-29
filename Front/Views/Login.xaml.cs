@@ -30,8 +30,8 @@ namespace Front.Views
             tbUsername.Text = "Unesite korisničko ime";
             tbUsername.Foreground = Brushes.LightSlateGray;
 
-            tbPasswd.Text = "Unesite lozinku";
-            tbPasswd.Foreground = Brushes.LightSlateGray;
+            passwordBox.PasswordChar = '*';
+            passwordBox.Foreground = Brushes.Black;
 
         }
 
@@ -45,11 +45,10 @@ namespace Front.Views
                 tbUsername.Text = "Unesite korisničko ime";
                 tbUsername.Foreground = new SolidColorBrush(Colors.Red);
             }
-            if (!FieldValidation.Validate(tbPasswd.Text, "Unesite lozinku"))
+            if (passwordBox.Password == null || passwordBox.Password == "")
             {
                 isValid = false;
-                tbPasswd.Text = "Unesite lozinku";
-                tbPasswd.Foreground = new SolidColorBrush(Colors.Red);
+                passwordBox.Foreground = new SolidColorBrush(Colors.Red);
             }
 
             if (isValid == true)
@@ -66,7 +65,7 @@ namespace Front.Views
 
                 //MainWindow mw = MainWindow.MainWindowInstance();
 
-                if (proxy.SignIn(tbUsername.Text, tbPasswd.Text) == true)
+                if (proxy.SignIn(tbUsername.Text, passwordBox.Password) == true)
                 {
                     mainWindow = MainWindow.MainWindowInstance(tbUsername.Text);
 
@@ -102,23 +101,6 @@ namespace Front.Views
             }
         }
 
-        private void tbPasswd_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbPasswd.Text.Trim().Equals("Unesite lozinku"))
-            {
-                tbPasswd.Text = "";
-                tbPasswd.Foreground = Brushes.Black;
-            }
-        }
-
-        private void tbPasswd_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbPasswd.Text.Trim().Equals("Unesite lozinku"))
-            {
-                tbPasswd.Text = "Unesite lozinku";
-                tbPasswd.Foreground = Brushes.Black;
-            }
-        }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {

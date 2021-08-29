@@ -12,7 +12,7 @@ namespace Front.Model
     public class ItemModel : INotifyPropertyChanged
     {
         private int id;
-        private string date;
+        private DateTime date;
         private string title;
         private string location;
         private string description;
@@ -20,7 +20,7 @@ namespace Front.Model
         private string finderUsername;
         private bool isFound;
 
-        public ItemModel(int id, string date, string title, string location, string description, string ownerUsername, string finderUsername, bool isFound)
+        public ItemModel(int id, DateTime date, string title, string location, string description, string ownerUsername, string finderUsername, bool isFound)
         {
             this.id = id;
             this.date = date;
@@ -46,7 +46,7 @@ namespace Front.Model
                 }
             }
         }
-        public string Date
+        public DateTime Date
         {
             get { return date; }
             set

@@ -15,8 +15,8 @@
         <TextBox x:Name="tbIme" HorizontalAlignment="Left" Text="{Binding Person.Name}" Height="23" Margin="185,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Text="{Binding Person.LastName}" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <Label x:Name="lblBirthdate" HorizontalAlignment="Left" Content="{Binding Person.Birthdate}" Height="23" Margin="185,185,0,0" VerticalAlignment="Top" Width="190"/>
-        <Label x:Name="tbUsername" HorizontalAlignment="Left" Content="{Binding Person.Username}" Height="23" Margin="185,227,0,0" VerticalAlignment="Top" Width="190"/>
-        <Button x:Name="btnRegister" Content="Izmeni" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="394" Height="32" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lbUsername" HorizontalAlignment="Left" Content="{Binding Person.Username}" Height="23" Margin="185,227,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="394" Height="32" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnModify_Click"/>
 
     </Grid>
 </Window>

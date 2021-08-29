@@ -22,12 +22,15 @@ namespace Front
             ObservableCollection<ItemModel> retList = new ObservableCollection<ItemModel>();
             ItemModel retItem = new ItemModel();
 
+
             foreach (Item i in tempList)
             {
+                DateTime d = Convert.ToDateTime(i.Date);
+                
                 retList.Add(new ItemModel
                 {
                     Id = i.Id,
-                    Date = i.Date,
+                    Date = d,
                     Title = i.Title,
                     Location = i.Location,
                     Description = i.Description,

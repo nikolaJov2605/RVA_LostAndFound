@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="900" Closed="Window_Closed">
+        Title="MainWindow" Height="450" Width="900" Closed="Window_Closed" ResizeMode="NoResize">
     <Grid>
-        <GroupBox x:Name="groupBox" Header="User" HorizontalAlignment="Left" Height="134" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
-            <Grid Margin="0,0,0,-4.6">
+        <GroupBox x:Name="groupBox" Header="Korisnik" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
+            <Grid Margin="0,0,0,-11.8">
                 <Label x:Name="lblUsername" Content="{Binding Person.Username}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblName" Content="{Binding Person.Name}" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblLastName" Content="{Binding Person.LastName}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="btnUpdateUser" Content="Izmeni" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,90,0,0" VerticalAlignment="Top" Width="68" Height="17" FontSize="10" Click="btnUpdateUser_Click_1"/>
+                <Label x:Name="lblRole" Content="{Binding Person.Role}" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="btnUpdateUser" Content="Izmeni" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,110,0,0" VerticalAlignment="Top" Width="68" Height="17" FontSize="10" Click="btnUpdateUser_Click_1"/>
             </Grid>
         </GroupBox>
         <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" CanUserAddRows="False" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date}" Width="*">
+                <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date, StringFormat=\{0:dd/MM/yyyy \}}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -67,7 +68,6 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="134,287,0,0" Name="txtUserId" VerticalAlignment="Top" Width="178" Text="{Binding ElementName=dataGridItems,Path=SelectedItem.Title}" />
         <Button x:Name="btnAddItem" Content="Dodaj predmet" HorizontalAlignment="Left" Margin="781,248,0,0" VerticalAlignment="Top" Width="103" Height="24" Click="btnAddItem_Click"/>
         <GroupBox x:Name="groupBox1" Header="" HorizontalAlignment="Left" Height="61" Margin="10,160,0,0" VerticalAlignment="Top" Width="100">
             <Grid Margin="2,0,-4,-6.6">
@@ -76,6 +76,51 @@
 
             </Grid>
         </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="Pretraga" HorizontalAlignment="Left" Height="131" Margin="134,248,0,0" VerticalAlignment="Top" Width="620">
+            <Grid Margin="0,-10,-2,-0.2">
+                <Label x:Name="label" Content="Po datumu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,10,0,0"/>
+                <Label x:Name="label1" Content="Početni datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,36,0,0"/>
+                <Label x:Name="label2" Content="Krajnji datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,63,0,0"/>
+                <TextBox x:Name="tbNaziv" HorizontalAlignment="Left" Height="20" Margin="249,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                <TextBox x:Name="tbLokacija" HorizontalAlignment="Left" Height="20" Margin="249,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                <DatePicker x:Name="dP1" HorizontalAlignment="Left" Margin="101,38,0,0" VerticalAlignment="Top" Width="97">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox x:Name="PART_TextBox" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:dd/MM/yyyy}}" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <DatePicker x:Name="dP2" HorizontalAlignment="Left" Margin="101,66,0,0" VerticalAlignment="Top" Width="97">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox x:Name="PART_TextBox" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:dd/MM/yyyy}}" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <Label x:Name="label3" Content="Po nazivu predmeta:" HorizontalAlignment="Left" Margin="226,5,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label4" Content="Po lokacijji:" HorizontalAlignment="Left" Margin="226,56,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label5" Content="Po korisničkom imenu vlasnika:" HorizontalAlignment="Left" Margin="404,5,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label6" Content="Po korisničkom imenu pronalazača:" HorizontalAlignment="Left" Margin="404,56,0,0" VerticalAlignment="Top" Width="199"/>
+                <TextBox x:Name="tbVlasnik" HorizontalAlignment="Left" Height="20" Margin="436,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+                <TextBox x:Name="tbPronalazac" HorizontalAlignment="Left" Height="20" Margin="436,82,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="buttonSearch" Content="Pretraži" HorizontalAlignment="Left" Margin="679,384,0,0" VerticalAlignment="Top" Width="75" Click="buttonSearch_Click"/>
+        <Button x:Name="buttonUndo" Content="Poništi" Visibility="Hidden" HorizontalAlignment="Left" Margin="679,384,0,0" VerticalAlignment="Top" Width="75" Click="buttonUndo_Click"/>
 
 
     </Grid>

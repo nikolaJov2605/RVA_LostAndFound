@@ -67,14 +67,26 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\AddItemCommand.cs" />
+    <Compile Include="Commands\LocalCommands\LocalCommandInvoker.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandInvoker.cs" />
+    <Compile Include="Commands\LocalCommands\SearchCommand.cs" />
+    <Compile Include="Commands\ModifyPersonCommand.cs" />
+    <Compile Include="Commands\ServerCommandInvoker.cs" />
     <Compile Include="Commands\CommandExecutor.cs" />
     <Compile Include="LoadItemsInfo.cs" />
     <Compile Include="LoadLoggedPerson.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Model\PersonModel.cs" />
     <Compile Include="FieldValidation.cs" />
+    <Compile Include="SearchCriterias\ISearchCriteria.cs" />
+    <Compile Include="SearchCriterias\SearchByDate.cs" />
+    <Compile Include="SearchCriterias\SearchByFinderUsername.cs" />
+    <Compile Include="SearchCriterias\SearchByLocation.cs" />
+    <Compile Include="SearchCriterias\SearchByOwnerUsername.cs" />
+    <Compile Include="SearchCriterias\SearchByTitle.cs" />
+    <Compile Include="SearchCriterias\SearchCommandExecutor.cs" />
+    <Compile Include="SearchParameters.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
     <Compile Include="Views\AddItem.xaml.cs">
       <DependentUpon>AddItem.xaml</DependentUpon>

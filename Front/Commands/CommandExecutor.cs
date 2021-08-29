@@ -8,6 +8,6 @@ namespace Front.Commands
 {
     public class CommandExecutor
     {
-        public static CommandInvoker Invoker = new CommandInvoker();
+        public static ServerCommandInvoker Invoker = new ServerCommandInvoker();
     }
 }

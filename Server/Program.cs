@@ -31,6 +31,14 @@ namespace Server
             loginService.Open();
             Console.WriteLine("Login service is up...");
 
+            ServiceHost deletePersonService = new ServiceHost(typeof(PersonServices.DeletePersonService));
+            deletePersonService.Open();
+            Console.WriteLine("DeletePerson service is up...");
+
+            ServiceHost modifyPersonService = new ServiceHost(typeof(PersonServices.ModifyPersonService));
+            modifyPersonService.Open();
+            Console.WriteLine("ModifyPerson service is up...");
+
             ServiceHost addItemService = new ServiceHost(typeof(AddItem));
             addItemService.Open();
             Console.WriteLine("AddItem service is up...");

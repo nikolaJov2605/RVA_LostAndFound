@@ -1,23 +1,12 @@
-﻿using Common;
-using Common.Services;
+﻿using Common.Services;
 using Front.Commands;
 using Front.Model;
+using Front.SearchCriterias;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Front.Views
 {
@@ -27,6 +16,7 @@ namespace Front.Views
     public partial class MainWindow : Window, IClientNotification
     {
         private static MainWindow mainWindowInstance;
+        private bool busy = false;
 
         private MainWindow()
         {
@@ -40,6 +30,7 @@ namespace Front.Views
             InitializeComponent();
             DataContext = new MainDataViewModel(username);
             dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
+            
         }
 
         public static MainWindow MainWindowInstance()
@@ -79,6 +70,8 @@ namespace Front.Views
 
         public void NotifyForChanges()
         {
+            if (busy == true)
+                return;
             MainDataViewModel.Items = LoadItemsInfo.LoadItems();
             mainWindowInstance.dataGridItems.ItemsSource = null;
             mainWindowInstance.dataGridItems.ItemsSource = MainDataViewModel.Items;
@@ -91,8 +84,39 @@ namespace Front.Views
 
         private void btnUpdateUser_Click_1(object sender, RoutedEventArgs e)
         {
-            ModifyUser modifyUser = ModifyUser.Instance(lblUsername.Content.ToString());
+            ModifyUser modifyUser = ModifyUser.Instance(lblUsername.Content.ToString(), mainWindowInstance);
             modifyUser.Show();
+        }
+
+
+        private void buttonUndo_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridItems.ItemsSource = null;
+            dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
+            mainWindowInstance.dP1.Text = String.Empty;
+            mainWindowInstance.dP2.Text = String.Empty;
+            mainWindowInstance.tbNaziv.Text = String.Empty;
+            mainWindowInstance.tbLokacija.Text = String.Empty;
+            mainWindowInstance.tbVlasnik.Text = String.Empty;
+            mainWindowInstance.tbPronalazac.Text = String.Empty;
+            mainWindowInstance.buttonUndo.Visibility = Visibility.Hidden;
+            mainWindowInstance.buttonSearch.Visibility = Visibility.Visible;
+
+            busy = false;
+        }
+
+        private void buttonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            List<ItemModel> source = new List<ItemModel>();
+            foreach (ItemModel item in dataGridItems.Items)
+                source.Add(item);
+            dataGridItems.ItemsSource = null;
+            dataGridItems.ItemsSource = SearchCommandExecutor.ExecuteSearch(source, dP1.Text, dP2.Text, tbNaziv.Text, tbLokacija.Text, tbVlasnik.Text, tbPronalazac.Text);
+
+            mainWindowInstance.buttonSearch.Visibility = Visibility.Hidden;
+            mainWindowInstance.buttonUndo.Visibility = Visibility.Visible;
+
+            busy = true;
         }
     }
 }

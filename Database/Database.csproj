@@ -78,6 +78,8 @@
     <Compile Include="PersonCommands\PersonsCheckings\PersonExistsCheck.cs" />
     <Compile Include="PersonCommands\PersonsQueries\RetrieveAllPersons.cs" />
     <Compile Include="PersonCommands\PersonUpdateCommands\AddPersonDBCommand.cs" />
+    <Compile Include="PersonCommands\PersonUpdateCommands\DeletePersonDBCommand.cs" />
+    <Compile Include="PersonCommands\PersonUpdateCommands\ModifyPersonDBCommand.cs" />
     <Compile Include="PersonCommands\SinglePersonQuery.cs" />
     <Compile Include="PersonCommands\SinglePersonsQueries\FindByUsernameQuery.cs" />
     <Compile Include="PersonRepository.cs" />

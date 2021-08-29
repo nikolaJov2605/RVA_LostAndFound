@@ -39,8 +39,8 @@ namespace Front.Views
             tbUsername.Text = "Unesite korisničko ime";
             tbUsername.Foreground = Brushes.LightSlateGray;
 
-            tbPasswd.Text = "Unesite lozinku";
-            tbPasswd.Foreground = Brushes.LightSlateGray;
+            passwordBox.PasswordChar = '*';
+            passwordBox.Foreground = Brushes.Black;
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -70,16 +70,15 @@ namespace Front.Views
                 tbUsername.Text = "Unesite korisničko ime";
                 tbUsername.Foreground = new SolidColorBrush(Colors.Red);
             }
-            if (!FieldValidation.Validate(tbPasswd.Text, "Unesite lozinku"))
+            if (passwordBox.Password == null || passwordBox.Password == "")
             {
                 isValid = false;
-                tbPasswd.Text = "Unesite lozinku";
-                tbPasswd.Foreground = new SolidColorBrush(Colors.Red);
+                passwordBox.Foreground = new SolidColorBrush(Colors.Red);
             }
 
             if (isValid == true)
             {
-                Person person = new Person(tbUsername.Text, tbPasswd.Text, tbIme.Text, tbPrezime.Text, dpDate.Text, Role.USER);
+                Person person = new Person(tbUsername.Text, passwordBox.Password, tbIme.Text, tbPrezime.Text, dpDate.Text, Role.USER);
 
                 ChannelFactory<IRegistration> factory = new ChannelFactory<IRegistration>("UserRegistration");
                 IRegistration proxy = factory.CreateChannel();
@@ -153,22 +152,5 @@ namespace Front.Views
             }
         }
 
-        private void tbPasswd_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbPasswd.Text.Trim().Equals("Unesite lozinku"))
-            {
-                tbPasswd.Text = "";
-                tbPasswd.Foreground = Brushes.Black;
-            }
-        }
-
-        private void tbPasswd_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbPasswd.Text.Trim().Equals(string.Empty))
-            {
-                tbPasswd.Text = "Unesite lozinku";
-                tbPasswd.Foreground = Brushes.LightSlateGray;
-            }
-        }
     }
 }
