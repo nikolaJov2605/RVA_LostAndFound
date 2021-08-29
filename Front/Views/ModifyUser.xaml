@@ -7,16 +7,20 @@
         mc:Ignorable="d"
         Title="ModifyUser" Height="353.133" Width="420" Closed="Window_Closed">
     <Grid Margin="0,0,-0.4,-7.8">
-        <Label x:Name="lblCaption" Content="Registracija" HorizontalAlignment="Center" Margin="10,10,-0.4,0" VerticalAlignment="Top" Height="69" Width="784" FontSize="40" HorizontalContentAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="97*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblCaption" Content="Izmena korisnika" HorizontalAlignment="Center" Margin="-180,10,-190,0" VerticalAlignment="Top" Height="69" Width="784" FontSize="40" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <Label x:Name="lblIme" Content="Ime:" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>
         <Label x:Name="lblPrezime" Content="Prezime:" HorizontalAlignment="Left" Margin="30,136,0,0" VerticalAlignment="Top" Width="85" FontSize="20" RenderTransformOrigin="0.48,-0.163"/>
-        <Label x:Name="lblDatum" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
-        <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
-        <TextBox x:Name="tbIme" HorizontalAlignment="Left" Text="{Binding Person.Name}" Height="23" Margin="185,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Text="{Binding Person.LastName}" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <Label x:Name="lblBirthdate" HorizontalAlignment="Left" Content="{Binding Person.Birthdate}" Height="23" Margin="185,185,0,0" VerticalAlignment="Top" Width="190"/>
-        <Label x:Name="lbUsername" HorizontalAlignment="Left" Content="{Binding Person.Username}" Height="23" Margin="185,227,0,0" VerticalAlignment="Top" Width="190"/>
-        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="394" Height="32" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnModify_Click"/>
+        <Label x:Name="lblDatum" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbIme" HorizontalAlignment="Left" Text="{Binding Person.Name}" Height="23" Margin="61.6,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Column="1"/>
+        <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Text="{Binding Person.LastName}" Height="23" Margin="61.6,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Column="1"/>
+        <Label x:Name="lblBirthdate" HorizontalAlignment="Left" Content="{Binding Person.Birthdate}" Height="23" Margin="61.6,185,0,0" VerticalAlignment="Top" Width="190" Grid.Column="1"/>
+        <Label x:Name="lbUsername" HorizontalAlignment="Left" Content="{Binding Person.Username}" Height="23" Margin="61.6,227,0,0" VerticalAlignment="Top" Width="190" Grid.Column="1"/>
+        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="394" Height="32" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnModify_Click" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

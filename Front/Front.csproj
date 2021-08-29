@@ -67,6 +67,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\AddItemCommand.cs" />
+    <Compile Include="Commands\AutorisedModifyPersonCommand.cs" />
     <Compile Include="Commands\DeleteItemCommand.cs" />
     <Compile Include="Commands\DuplicateCommand.cs" />
     <Compile Include="Commands\LocalCommands\LocalCommandInvoker.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Commands\CommandExecutor.cs" />
     <Compile Include="LoadItemsInfo.cs" />
     <Compile Include="LoadLoggedPerson.cs" />
+    <Compile Include="LoadPeopleInfo.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Model\PersonModel.cs" />
     <Compile Include="FieldValidation.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="UnsubscribeUser.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
     <Compile Include="ViewModel\ModifyItemViewModel.cs" />
+    <Compile Include="ViewModel\PeopleViewModel.cs" />
     <Compile Include="Views\AddItem.xaml.cs">
       <DependentUpon>AddItem.xaml</DependentUpon>
     </Compile>
@@ -105,8 +108,14 @@
     <Compile Include="Views\ModifyItem.xaml.cs">
       <DependentUpon>ModifyItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ModifyPerson.xaml.cs">
+      <DependentUpon>ModifyPerson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifyUser.xaml.cs">
       <DependentUpon>ModifyUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeopleView.xaml.cs">
+      <DependentUpon>PeopleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Registracija.xaml.cs">
       <DependentUpon>Registracija.xaml</DependentUpon>
@@ -131,7 +140,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ModifyPerson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ModifyUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PeopleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

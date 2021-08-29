@@ -10,6 +10,7 @@ using Database;
 using Common;
 using Server.Notifications;
 using Server.SignIn;
+using Server.PersonServices;
 
 namespace Server
 {
@@ -61,6 +62,10 @@ namespace Server
             retrieveItemsService.Open();
             Console.WriteLine("RetrieveItems service is up...");
 
+            ServiceHost retrievePeopleService = new ServiceHost(typeof(RetrievePeople));
+            retrievePeopleService.Open();
+            Console.WriteLine("RetrievePeople service is up...");
+
             ServiceHost loadPersonService = new ServiceHost(typeof(LoadPersonInfo));
             loadPersonService.Open();
             Console.WriteLine("LoadPersonService service is up...");
@@ -72,6 +77,10 @@ namespace Server
             ServiceHost loadItemService = new ServiceHost(typeof(LoadItem));
             loadItemService.Open();
             Console.WriteLine("LoadIteem service is up...");
+
+            ServiceHost modifyPersonAutorisedService = new ServiceHost(typeof(ModifyPersonAutorised));
+            modifyPersonAutorisedService.Open();
+            Console.WriteLine("MofifyPersonAutorisedService is up...");
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }

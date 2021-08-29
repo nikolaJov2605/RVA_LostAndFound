@@ -20,7 +20,6 @@ namespace Front
             IRetrieveItems proxy = factory.CreateChannel();
             List<Item> tempList = proxy.RetrieveAllItems();
             ObservableCollection<ItemModel> retList = new ObservableCollection<ItemModel>();
-            ItemModel retItem = new ItemModel();
 
 
             foreach (Item i in tempList)

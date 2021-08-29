@@ -32,7 +32,7 @@
         <TextBox x:Name="tbLokacija" Text="{Binding Item.Location}" HorizontalAlignment="Left" Height="23" Margin="236,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
         <TextBox x:Name="tbOpis" Text="{Binding Item.Description}" HorizontalAlignment="Left" Height="23" Margin="236,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
         <TextBox x:Name="tbVlasnik" IsReadOnly="true" Text="{Binding Item.OwnerUsername}" HorizontalAlignment="Left" Height="23" Margin="236,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
-        <Button x:Name="btnModifyItem" Content="Dodaj" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="458" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnModifyItem_Click"/>
+        <Button x:Name="btnModifyItem" Content="Izmeni" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="458" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnModifyItem_Click"/>
         <Label x:Name="lblDateErr" Content="" HorizontalAlignment="Left" Margin="383,102,0,0" VerticalAlignment="Top" Width="94"/>
 
     </Grid>

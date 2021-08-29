@@ -1,0 +1,50 @@
+﻿<Window x:Class="Front.Views.ModifyPerson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front.Views"
+        mc:Ignorable="d"
+        Title="ModifyPerson" Height="450" Width="420" Closed="Window_Closed">
+    <Grid>
+        <Label x:Name="lblCaption" Content="Izmeni osobu" HorizontalAlignment="Center" Margin="0,10,-0.4,0" VerticalAlignment="Top" Height="69" Width="414" FontSize="40" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblIme" Content="Ime:" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>
+        <Label x:Name="lblPrezime" Content="Prezime:" HorizontalAlignment="Left" Margin="30,136,0,0" VerticalAlignment="Top" Width="85" FontSize="20" RenderTransformOrigin="0.48,-0.163"/>
+        <Label x:Name="lblDatum" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="lblPasswd" Content="Lozinka:" HorizontalAlignment="Left" Margin="30,262,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="label" Content="Uloga:" HorizontalAlignment="Left" Margin="30,304,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <TextBox x:Name="tbIme" Text="{Binding Person.Name}" HorizontalAlignment="Left" Height="23" Margin="185,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="tbPrezime" Text="{Binding Person.LastName}" HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="tbUsername" Text="{Binding Person.Username}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="185,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left"  Height="23" Margin="185,272,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <DatePicker x:Name="dpDate" Text="{Binding Person.Brithdate}"  HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="105" SelectedDateFormat="Short">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <TextBox x:Name="PART_TextBox" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:dd/MM/yyyy}}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Label x:Name="lblDateErr" Content="" HorizontalAlignment="Left" Margin="295,185,0,0" VerticalAlignment="Top" Width="94"/>
+        <ComboBox x:Name="cbRole" SelectedIndex="0" HorizontalAlignment="Left" Margin="185,313,0,0" VerticalAlignment="Top" Width="120" Height="23">
+            <ComboBoxItem>
+                <TextBlock Text="Izaberite ulogu"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Administrator"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Korisnik"/>
+            </ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>

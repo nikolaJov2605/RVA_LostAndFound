@@ -1,0 +1,59 @@
+﻿<Window x:Class="Front.Views.PeopleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front.Views"
+        mc:Ignorable="d"
+        Title="PeopleView" Height="400" Width="600" Closed="Window_Closed" MouseDown="Window_MouseDown">
+    <Grid>
+        <DataGrid x:Name="dataGridPeople" ItemsSource="{Binding People}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single"  HorizontalAlignment="Left" Height="320" Margin="10,10,0,0" VerticalAlignment="Top" Width="574" SelectionChanged="dataGridPeople_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ime" Binding="{Binding Path=Name}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Prezime" Binding="{Binding Path=LastName}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Korisničko ime" Binding="{Binding Path=Username}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Datum rođenja" Binding="{Binding Path=Birthdate}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Uloga" Binding="{Binding Path=Role}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAdd" Content="Dodaj" HorizontalAlignment="Left" Margin="262,335,0,0" VerticalAlignment="Top" Width="104" Height="25" Click="btnAdd_Click"/>
+        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="371,335,0,0" VerticalAlignment="Top" Width="104" Height="25" Click="btnModify_Click"/>
+        <Button x:Name="btnDelete" Content="Obriši" HorizontalAlignment="Left" Margin="480,335,0,0" VerticalAlignment="Top" Width="104" Height="25"/>
+
+    </Grid>
+</Window>

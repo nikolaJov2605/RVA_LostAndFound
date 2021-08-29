@@ -29,6 +29,7 @@ namespace Front.Views
             dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
 
             buttonRegister.Visibility = Visibility.Hidden;
+            buttonPeople.Visibility = Visibility.Hidden;
         }
 
         private MainWindow(string username) : base()
@@ -38,6 +39,7 @@ namespace Front.Views
             dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
 
             buttonRegister.Visibility = Visibility.Hidden;
+            buttonPeople.Visibility = Visibility.Hidden;
 
         }
 
@@ -138,6 +140,7 @@ namespace Front.Views
             if(lblRole.Content.ToString() == "ADMIN")
             {
                 buttonRegister.Visibility = Visibility.Visible;
+                buttonPeople.Visibility = Visibility.Visible;
             }
         }
 
@@ -258,6 +261,12 @@ namespace Front.Views
             Command duplicateCommand = new DuplicateCommand(selectedItem);
             CommandExecutor.Invoker.AddAndExecuteCommand(duplicateCommand, mainWindowInstance);
 
+        }
+
+        private void buttonPeople_Click(object sender, RoutedEventArgs e)
+        {
+            PeopleView peopleView = PeopleView.Instance();
+            peopleView.Show();
         }
     }
 }

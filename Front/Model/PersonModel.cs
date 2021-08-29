@@ -11,6 +11,7 @@ namespace Front.Model
     public class PersonModel
     {
         private string username;
+        private string password;
         private string name;
         private string lastName;
         private string birthdate;
@@ -25,7 +26,19 @@ namespace Front.Model
                 {
                     username = value;
                     RaisePropertyChanged("Name");
-                    RaisePropertyChanged("FullName");
+                }
+            }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                if (password != value)
+                {
+                    password = value;
+                    RaisePropertyChanged("Password");
                 }
             }
         }
@@ -66,7 +79,7 @@ namespace Front.Model
                 if(birthdate != value)
                 {
                     birthdate = value;
-                    RaisePropertyChanged("Birthday");
+                    RaisePropertyChanged("Birthdate");
                 }
             }
 

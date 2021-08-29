@@ -90,10 +90,7 @@ namespace Front.Views
 
                 CommandExecutor.Invoker.AddAndExecuteCommand(modifyItemCommand, mw);
 
-                this.Close();
-
-                DeleteInstance();
-
+                
             }
             else
                 return;
