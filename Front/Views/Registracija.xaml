@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="Registracija" Height="425" Width="420">
+        Title="Registracija" Height="450" Width="420" Closed="Window_Closed">
     <Grid>
         <Label x:Name="lblCaption" Content="Registracija" HorizontalAlignment="Center" Margin="0,10,-0.4,0" VerticalAlignment="Top" Height="69" Width="414" FontSize="40" HorizontalContentAlignment="Center"/>
         <Label x:Name="lblIme" Content="Ime:" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>
@@ -13,12 +13,13 @@
         <Label x:Name="lblDatum" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
         <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
         <Label x:Name="lblPasswd" Content="Lozinka:" HorizontalAlignment="Left" Margin="30,262,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+        <Label x:Name="label" Content="Uloga:" HorizontalAlignment="Left" Margin="30,304,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
         <TextBox x:Name="tbIme" HorizontalAlignment="Left" Height="23" Margin="185,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbIme_GotFocus" LostFocus="tbIme_LostFocus"/>
         <TextBox x:Name="tbPrezime" HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbPrezime_GotFocus" LostFocus="tbPrezime_LostFocus"/>
         <TextBox x:Name="tbUsername" HorizontalAlignment="Left" Height="23" Margin="185,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" GotFocus="tbUsername_GotFocus" LostFocus="tbUsername_LostFocus"/>
 
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left"  Height="23" Margin="185,272,0,0" VerticalAlignment="Top" Width="190"/>
-        <Button x:Name="btnRegister" Content="Registracija" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnRegister_Click"/>
+        <Button x:Name="btnRegister" Content="Registracija" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnRegister_Click"/>
 
         <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="105" SelectedDateFormat="Short">
             <DatePicker.Resources>
@@ -35,5 +36,16 @@
             </DatePicker.Resources>
         </DatePicker>
         <Label x:Name="lblDateErr" Content="" HorizontalAlignment="Left" Margin="295,185,0,0" VerticalAlignment="Top" Width="94"/>
+        <ComboBox x:Name="cbRole" SelectedIndex="0" HorizontalAlignment="Left" Margin="185,313,0,0" VerticalAlignment="Top" Width="120" Height="23">
+            <ComboBoxItem>
+                <TextBlock Text="Izaberite ulogu"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Administrator"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Korisnik"/>
+            </ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

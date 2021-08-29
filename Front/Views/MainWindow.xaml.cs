@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Front.Views
 {
@@ -17,12 +18,15 @@ namespace Front.Views
     {
         private static MainWindow mainWindowInstance;
         private bool busy = false;
+        private ItemModel selectedItem;
 
         private MainWindow()
         {
             InitializeComponent();
             DataContext = new MainDataViewModel();
             dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
+
+            buttonRegister.Visibility = Visibility.Hidden;
         }
 
         private MainWindow(string username) : base()
@@ -30,7 +34,9 @@ namespace Front.Views
             InitializeComponent();
             DataContext = new MainDataViewModel(username);
             dataGridItems.ItemsSource = LoadItemsInfo.LoadItems();
-            
+
+            buttonRegister.Visibility = Visibility.Hidden;
+
         }
 
         public static MainWindow MainWindowInstance()
@@ -117,6 +123,81 @@ namespace Front.Views
             mainWindowInstance.buttonUndo.Visibility = Visibility.Visible;
 
             busy = true;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Registracija registrationWindow = Registracija.Instance();
+            registrationWindow.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(lblRole.Content.ToString() == "ADMIN")
+            {
+                buttonRegister.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Login loginWindow = new Login();
+            loginWindow.Show();
+
+            AddItem addItem = AddItem.Instance(lblUsername.Content.ToString(), mainWindowInstance);
+            addItem.Close();
+            AddItem.DeleteInstance();
+
+            ModifyItem modifyItem = ModifyItem.Instance();
+            modifyItem.Close();
+            ModifyItem.DeleteInstance();
+
+            ModifyUser modifyUser = ModifyUser.Instance(lblUsername.Content.ToString(), mainWindowInstance);
+            modifyUser.Close();
+            ModifyUser.DeleteInstance();
+
+            Registracija registracija = Registracija.Instance();
+            registracija.Close();
+            Registracija.DeleteInstance();
+
+            this.Close();
+            DeleteInstance();
+        }
+
+        private void buttonModifyItem_Click(object sender, RoutedEventArgs e)
+        {
+            if(mainWindowInstance.dataGridItems.SelectedItem == null)
+            {
+                return;
+            }
+
+            ModifyItemViewModel.Item = selectedItem;
+
+            ModifyItem modifyItemWindow = ModifyItem.Instance();
+            modifyItemWindow.Show();
+
+        }
+
+        private void dataGridItems_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if(dataGridItems.SelectedItems.Count > 0)
+            {
+                selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
+                Console.WriteLine(selectedItem.ToString());
+                mainWindowInstance.buttonModifyItem.IsHitTestVisible = true;
+                mainWindowInstance.buttonModifyItem.Background = Brushes.LightGray;
+            }
+            else
+            {
+                mainWindowInstance.buttonModifyItem.IsHitTestVisible = false;
+                mainWindowInstance.buttonModifyItem.Background = Brushes.Gray;
+            }
+        }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+            mainWindowInstance.dataGridItems.SelectedItem = null;
         }
     }
 }

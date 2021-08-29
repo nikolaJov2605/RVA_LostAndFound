@@ -100,12 +100,5 @@ namespace Front.Views
                 tbUsername.Foreground = Brushes.LightSlateGray;
             }
         }
-
-
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Registracija registrationWindow = new Registracija();
-            registrationWindow.Show();
-        }
     }
 }

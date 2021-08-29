@@ -23,7 +23,9 @@ namespace Front.Views
     /// </summary>
     public partial class Registracija : Window
     {
-        public Registracija()
+        private static Registracija instance;
+
+        private Registracija()
         {
             InitializeComponent();
 
@@ -41,6 +43,22 @@ namespace Front.Views
 
             passwordBox.PasswordChar = '*';
             passwordBox.Foreground = Brushes.Black;
+
+            cbRole.Foreground = Brushes.Black;
+
+            
+        }
+
+        public static Registracija Instance()
+        {
+            if (instance == null)
+                instance = new Registracija();
+            return instance;
+        }
+
+        public static void DeleteInstance()
+        {
+            instance = null;
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -75,10 +93,22 @@ namespace Front.Views
                 isValid = false;
                 passwordBox.Foreground = new SolidColorBrush(Colors.Red);
             }
+            if(cbRole.Text == "Izaberite ulogu")
+            {
+                isValid = false;
+                cbRole.Foreground = new SolidColorBrush(Colors.Red);
+            }
 
             if (isValid == true)
             {
-                Person person = new Person(tbUsername.Text, passwordBox.Password, tbIme.Text, tbPrezime.Text, dpDate.Text, Role.USER);
+                Role userRole = Role.ADMIN;
+
+                if (cbRole.Text == "Administrator")
+                    userRole = Role.ADMIN;
+                else if (cbRole.Text == "Korisnik")
+                    userRole = Role.USER;
+
+                Person person = new Person(tbUsername.Text, passwordBox.Password, tbIme.Text, tbPrezime.Text, dpDate.Text, userRole);
 
                 ChannelFactory<IRegistration> factory = new ChannelFactory<IRegistration>("UserRegistration");
                 IRegistration proxy = factory.CreateChannel();
@@ -90,6 +120,7 @@ namespace Front.Views
                     mainWindow.Show();*/
                     Console.WriteLine("User " + person.Username + " registered");
                     this.Close();
+                    DeleteInstance();
                 }
                 
             }
@@ -152,5 +183,9 @@ namespace Front.Views
             }
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            DeleteInstance();
+        }
     }
 }

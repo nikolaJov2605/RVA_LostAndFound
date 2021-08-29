@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="Login" Height="310" Width="350">
+        Title="Login" Height="285" Width="350">
     <Grid>
         <Label x:Name="lblCaption" Content="Prijava" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="324" FontSize="30" HorizontalContentAlignment="Center"/>
         <Label x:Name="lblUsername" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
@@ -14,9 +14,5 @@
 
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Margin="165,144,0,0" Width="169" TextBlock.FontWeight="Bold"/>
         <Button x:Name="button" Content="Prijava" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" Width="324" Height="29" FontSize="20" Click="button_Click"/>
-        <Label x:Name="lblContent" Content="Nemate nalog?" HorizontalAlignment="Left" Margin="165,242,0,0" VerticalAlignment="Top" Width="86" Height="26"/>
-        <Label x:Name="lblLogin" HorizontalAlignment="Left" Margin="256,242,0,0" VerticalAlignment="Top">
-            <TextBlock TextDecorations="Underline" FontStyle="Italic" Foreground="Blue" MouseDown="TextBlock_MouseDown">Registrujte se</TextBlock>
-        </Label>
     </Grid>
 </Window>

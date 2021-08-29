@@ -31,14 +31,7 @@ namespace Front.ViewModel
         {
             PersonModel person = LoadLoggedPerson.LoadPerson(username);
             Person = person;
-            //items = new ObservableCollection<ItemModel>(LoadItemsInfo.LoadItems());
-           // UpdateGrid();
         }
-
-       /* public static void UpdateGrid()
-        {
-            items = new ObservableCollection<ItemModel>(LoadItemsInfo.LoadItems());
-        }*/
 
     }
 }

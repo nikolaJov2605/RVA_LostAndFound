@@ -21,6 +21,12 @@ namespace Server
             {
                 //Truncate Table to delete all old records.
                 context.Database.ExecuteSqlCommand("TRUNCATE TABLE [Items]");
+            }
+
+            using (AppDBContext context = new AppDBContext())
+            {
+                //Truncate Table to delete all old records.
+                context.Database.ExecuteSqlCommand("DELETE FROM [People]");
             }*/
 
             ServiceHost registrationService = new ServiceHost(typeof(Registration.Registration));
@@ -58,6 +64,10 @@ namespace Server
             ServiceHost loadPersonService = new ServiceHost(typeof(LoadPersonInfo));
             loadPersonService.Open();
             Console.WriteLine("LoadPersonService service is up...");
+
+            ServiceHost modifyItemService = new ServiceHost(typeof(ModifyItem));
+            modifyItemService.Open();
+            Console.WriteLine("ModifyItem service is up...");
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }

@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="900" Closed="Window_Closed" ResizeMode="NoResize">
+        Title="MainWindow" Height="450" Width="930" Closed="Window_Closed" ResizeMode="NoResize" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
     <Grid>
-        <GroupBox x:Name="groupBox" Header="Korisnik" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
+        <GroupBox x:Name="groupBox" Header="Korisnik" HorizontalAlignment="Left" Height="176" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
             <Grid Margin="0,0,0,-11.8">
                 <Label x:Name="lblUsername" Content="{Binding Person.Username}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblName" Content="{Binding Person.Name}" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblLastName" Content="{Binding Person.LastName}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblRole" Content="{Binding Person.Role}" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="btnUpdateUser" Content="Izmeni" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,110,0,0" VerticalAlignment="Top" Width="68" Height="17" FontSize="10" Click="btnUpdateUser_Click_1"/>
+                <Button x:Name="btnLogOut" Content="Odjava" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,135,0,0" VerticalAlignment="Top" Width="68" Height="17" FontSize="10" Click="btnLogOut_Click" Foreground="Black" Background="Red"/>
+
             </Grid>
         </GroupBox>
-        <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" CanUserAddRows="False" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755">
+        <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Height="233" Margin="129,10,0,0" VerticalAlignment="Top" Width="755" SelectionChanged="dataGridItems_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date, StringFormat=\{0:dd/MM/yyyy \}}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
@@ -68,8 +70,8 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAddItem" Content="Dodaj predmet" HorizontalAlignment="Left" Margin="781,248,0,0" VerticalAlignment="Top" Width="103" Height="24" Click="btnAddItem_Click"/>
-        <GroupBox x:Name="groupBox1" Header="" HorizontalAlignment="Left" Height="61" Margin="10,160,0,0" VerticalAlignment="Top" Width="100">
+        <Button x:Name="btnAddItem" Content="Dodaj predmet" HorizontalAlignment="Left" Margin="769,248,0,0" VerticalAlignment="Top" Width="135" Height="24" Click="btnAddItem_Click"/>
+        <GroupBox x:Name="groupBox1" Header="" HorizontalAlignment="Left" Height="61" Margin="10,191,0,0" VerticalAlignment="Top" Width="100">
             <Grid Margin="2,0,-4,-6.6">
                 <Button x:Name="btnUndo" Content="Undo" HorizontalAlignment="Left" Margin="3,-3,0,0" VerticalAlignment="Top" Width="77" Click="btnUndo_Click"/>
                 <Button x:Name="btnRedo" Content="Redo" HorizontalAlignment="Left" Margin="3,21,0,0" VerticalAlignment="Top" Width="77" Click="btnRedo_Click"/>
@@ -121,6 +123,8 @@
         </GroupBox>
         <Button x:Name="buttonSearch" Content="Pretraži" HorizontalAlignment="Left" Margin="679,384,0,0" VerticalAlignment="Top" Width="75" Click="buttonSearch_Click"/>
         <Button x:Name="buttonUndo" Content="Poništi" Visibility="Hidden" HorizontalAlignment="Left" Margin="679,384,0,0" VerticalAlignment="Top" Width="75" Click="buttonUndo_Click"/>
+        <Button x:Name="buttonRegister" Content="Registruj novog" HorizontalAlignment="Left" Margin="15,257,0,0" VerticalAlignment="Top" Width="89" Click="button_Click"/>
+        <Button x:Name="buttonModifyItem" Content="Izmeni izabran predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,277,0,0" VerticalAlignment="Top" Width="135" Height="24" Click="buttonModifyItem_Click"/>
 
 
     </Grid>

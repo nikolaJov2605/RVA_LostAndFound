@@ -71,6 +71,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandInvoker.cs" />
     <Compile Include="Commands\LocalCommands\SearchCommand.cs" />
+    <Compile Include="Commands\ModifyItemCommand.cs" />
     <Compile Include="Commands\ModifyPersonCommand.cs" />
     <Compile Include="Commands\ServerCommandInvoker.cs" />
     <Compile Include="Commands\CommandExecutor.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="SearchCriterias\SearchCommandExecutor.cs" />
     <Compile Include="SearchParameters.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
+    <Compile Include="ViewModel\ModifyItemViewModel.cs" />
     <Compile Include="Views\AddItem.xaml.cs">
       <DependentUpon>AddItem.xaml</DependentUpon>
     </Compile>
@@ -96,6 +98,9 @@
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifyItem.xaml.cs">
+      <DependentUpon>ModifyItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ModifyUser.xaml.cs">
       <DependentUpon>ModifyUser.xaml</DependentUpon>
@@ -116,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModifyItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
