@@ -67,6 +67,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\AddItemCommand.cs" />
+    <Compile Include="Commands\DeleteItemCommand.cs" />
+    <Compile Include="Commands\DuplicateCommand.cs" />
     <Compile Include="Commands\LocalCommands\LocalCommandInvoker.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandInvoker.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="SearchCriterias\SearchByTitle.cs" />
     <Compile Include="SearchCriterias\SearchCommandExecutor.cs" />
     <Compile Include="SearchParameters.cs" />
+    <Compile Include="UnsubscribeUser.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
     <Compile Include="ViewModel\ModifyItemViewModel.cs" />
     <Compile Include="Views\AddItem.xaml.cs">
@@ -172,6 +175,10 @@
     <ProjectReference Include="..\Database\Database.csproj">
       <Project>{8032CD81-F08A-4701-BB94-B0E5C011315F}</Project>
       <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server\Server.csproj">
+      <Project>{4BC8C8CD-9E3D-45C0-9F18-4870CA95AA2C}</Project>
+      <Name>Server</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

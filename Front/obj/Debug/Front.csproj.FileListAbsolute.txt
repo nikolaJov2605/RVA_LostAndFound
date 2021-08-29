@@ -55,3 +55,6 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.pdb
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyItem.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyItem.baml
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Server.exe
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Server.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Server.exe.config

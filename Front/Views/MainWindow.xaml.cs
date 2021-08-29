@@ -1,5 +1,6 @@
 ﻿using Common.Services;
 using Front.Commands;
+using Front.Commands.LocalCommands;
 using Front.Model;
 using Front.SearchCriterias;
 using Front.ViewModel;
@@ -18,7 +19,8 @@ namespace Front.Views
     {
         private static MainWindow mainWindowInstance;
         private bool busy = false;
-        private ItemModel selectedItem;
+        public ItemModel selectedItem;
+        public ItemModel saveOldItem;
 
         private MainWindow()
         {
@@ -160,6 +162,8 @@ namespace Front.Views
             registracija.Close();
             Registracija.DeleteInstance();
 
+            UnsubscribeUser.Unsubscribe();
+
             this.Close();
             DeleteInstance();
         }
@@ -183,14 +187,54 @@ namespace Front.Views
             if(dataGridItems.SelectedItems.Count > 0)
             {
                 selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
-                Console.WriteLine(selectedItem.ToString());
-                mainWindowInstance.buttonModifyItem.IsHitTestVisible = true;
-                mainWindowInstance.buttonModifyItem.Background = Brushes.LightGray;
+
+                if (lblRole.Content.ToString() == "USER")
+                {
+                    if (selectedItem.OwnerUsername == lblUsername.Content.ToString())
+                    {
+                        mainWindowInstance.buttonModifyItem.IsHitTestVisible = true;
+                        mainWindowInstance.buttonModifyItem.Background = Brushes.LightGray;
+
+                        mainWindowInstance.buttonDelete.IsHitTestVisible = true;
+                        mainWindowInstance.buttonDelete.Background = Brushes.LightGray;
+
+                        mainWindowInstance.buttonDuplicate.IsHitTestVisible = true;
+                        mainWindowInstance.buttonDuplicate.Background = Brushes.LightGray;
+                    }
+                    else
+                    {
+                        mainWindowInstance.buttonModifyItem.IsHitTestVisible = false;
+                        mainWindowInstance.buttonModifyItem.Background = Brushes.Gray;
+
+                        mainWindowInstance.buttonDelete.IsHitTestVisible = false;
+                        mainWindowInstance.buttonDelete.Background = Brushes.Gray;
+
+                        mainWindowInstance.buttonDuplicate.IsHitTestVisible = false;
+                        mainWindowInstance.buttonDuplicate.Background = Brushes.Gray;
+                    }
+                }
+                else
+                {
+                    mainWindowInstance.buttonModifyItem.IsHitTestVisible = true;
+                    mainWindowInstance.buttonModifyItem.Background = Brushes.LightGray;
+
+                    mainWindowInstance.buttonDelete.IsHitTestVisible = true;
+                    mainWindowInstance.buttonDelete.Background = Brushes.LightGray;
+
+                    mainWindowInstance.buttonDuplicate.IsHitTestVisible = true;
+                    mainWindowInstance.buttonDuplicate.Background = Brushes.LightGray;
+                }
             }
             else
             {
                 mainWindowInstance.buttonModifyItem.IsHitTestVisible = false;
                 mainWindowInstance.buttonModifyItem.Background = Brushes.Gray;
+
+                mainWindowInstance.buttonDelete.IsHitTestVisible = false;
+                mainWindowInstance.buttonDelete.Background = Brushes.Gray;
+
+                mainWindowInstance.buttonDuplicate.IsHitTestVisible = false;
+                mainWindowInstance.buttonDuplicate.Background = Brushes.Gray;
             }
         }
 
@@ -198,6 +242,22 @@ namespace Front.Views
         {
 
             mainWindowInstance.dataGridItems.SelectedItem = null;
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
+            Command deleteCommand = new DeleteItemCommand(selectedItem.Id);
+            CommandExecutor.Invoker.AddAndExecuteCommand(deleteCommand, mainWindowInstance);
+        }
+
+        private void buttonDuplicate_Click(object sender, RoutedEventArgs e)
+        {
+            selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
+
+            Command duplicateCommand = new DuplicateCommand(selectedItem);
+            CommandExecutor.Invoker.AddAndExecuteCommand(duplicateCommand, mainWindowInstance);
+
         }
     }
 }

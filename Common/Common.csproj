@@ -53,7 +53,9 @@
     <Compile Include="Services\IClientNotification.cs" />
     <Compile Include="Services\IDeleteItem.cs" />
     <Compile Include="Services\IDeletePerson.cs" />
+    <Compile Include="Services\ILoadItem.cs" />
     <Compile Include="Services\ILoadPersonInfo.cs" />
+    <Compile Include="Services\IModifyItem.cs" />
     <Compile Include="Services\IModifyPerson.cs" />
     <Compile Include="Services\IRegistration.cs" />
     <Compile Include="Services\IRetrieveItems.cs" />

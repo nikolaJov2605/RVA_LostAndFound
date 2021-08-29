@@ -28,5 +28,10 @@ namespace Database
         {
             return generation.Execute();
         }
+
+        public static Item GetItem(SingleItemQuery query)
+        {
+            return query.Execute();
+        }
     }
 }

@@ -13,7 +13,20 @@
         <Label x:Name="lblLokacija" Content="Lokacija:" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="85" FontSize="20" Grid.RowSpan="2"/>
         <Label x:Name="lblOpis" Content="Opis:" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Width="85" FontSize="20"/>
         <Label x:Name="lblVlasnik" Content="Korisničko ime vlasnika:" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" Width="221" FontSize="20"/>
-        <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="236,102,0,0" VerticalAlignment="Top" Width="142"/>
+        <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="236,102,0,0" VerticalAlignment="Top" Width="142">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <TextBox x:Name="PART_TextBox" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:dd/MM/yyyy}}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
         <TextBox x:Name="tbNaziv" HorizontalAlignment="Left" Height="23" Margin="236,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" GotFocus="tbNaziv_GotFocus" LostFocus="tbNaziv_LostFocus"/>
         <TextBox x:Name="tbLokacija" HorizontalAlignment="Left" Height="23" Margin="236,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" GotFocus="tbLokacija_GotFocus" LostFocus="tbLokacija_LostFocus"/>
         <TextBox x:Name="tbOpis" HorizontalAlignment="Left" Height="23" Margin="236,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" GotFocus="tbOpis_GotFocus" LostFocus="tbOpis_LostFocus"/>

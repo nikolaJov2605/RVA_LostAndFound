@@ -20,7 +20,7 @@ namespace Server.ItemServices
 
             try
             {
-                var query = context.Items.Where(x => x.Id == key).First<Item>();
+                var query = context.Items.Include("Owner").Include("Finder").Where(x => x.Id == key).First<Item>();
                 if (query != null)
                     return query;
             }

@@ -68,6 +68,10 @@ namespace Server
             ServiceHost modifyItemService = new ServiceHost(typeof(ModifyItem));
             modifyItemService.Open();
             Console.WriteLine("ModifyItem service is up...");
+
+            ServiceHost loadItemService = new ServiceHost(typeof(LoadItem));
+            loadItemService.Open();
+            Console.WriteLine("LoadIteem service is up...");
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }

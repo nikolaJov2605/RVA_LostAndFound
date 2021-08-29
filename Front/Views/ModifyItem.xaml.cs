@@ -85,7 +85,7 @@ namespace Front.Views
 
             if (isValid == true)
             {
-                Command modifyItemCommand = new ModifyItemCommand(dpDate.Text, tbOpis.Text, tbNaziv.Text, tbLokacija.Text, 
+                Command modifyItemCommand = new ModifyItemCommand(ModifyItemViewModel.Item.Id, dpDate.Text, tbOpis.Text, tbNaziv.Text, tbLokacija.Text, 
                     ModifyItemViewModel.Item.IsFound, ModifyItemViewModel.Item.OwnerUsername, ModifyItemViewModel.Item.FinderUsername);
 
                 CommandExecutor.Invoker.AddAndExecuteCommand(modifyItemCommand, mw);
