@@ -20,7 +20,6 @@ namespace Front.Views
         private static MainWindow mainWindowInstance;
         private bool busy = false;
         public ItemModel selectedItem;
-        public ItemModel saveOldItem;
 
         private MainWindow()
         {

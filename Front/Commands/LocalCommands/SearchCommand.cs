@@ -26,7 +26,7 @@ namespace Front.Commands.LocalCommands
 
         public override void Unexecute()
         {
-            throw new NotImplementedException();
+            return;
         }
     }
 }

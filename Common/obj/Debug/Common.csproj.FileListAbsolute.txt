@@ -1,5 +1,0 @@
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Common\bin\Debug\Common.dll
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Common\bin\Debug\Common.pdb
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Common\obj\Debug\Common.dll
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Common\obj\Debug\Common.pdb
