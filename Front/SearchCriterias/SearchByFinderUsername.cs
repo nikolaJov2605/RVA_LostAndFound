@@ -17,9 +17,17 @@ namespace Front.SearchCriterias
 
         public List<ItemModel> Search(List<ItemModel> list, SearchParameters searchParameter)
         {
+            List<ItemModel> retList = new List<ItemModel>();
             if (!String.IsNullOrEmpty(searchParameter.TextParameter))
             {
-                return list.Where(x => x.FinderUsername.ToLower().Contains(searchParameter.TextParameter.ToLower())).ToList();
+                foreach(ItemModel i in list)
+                {
+                    if (!String.IsNullOrEmpty(i.FinderUsername) && i.FinderUsername.ToLower().Contains(searchParameter.TextParameter.ToLower()))
+                    {
+                        retList.Add(i);
+                    }
+                }
+                return retList;
             }
             else
                 return list;
