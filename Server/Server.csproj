@@ -60,6 +60,7 @@
     <Compile Include="ItemServices\ModifyItem.cs" />
     <Compile Include="ItemServices\RetrieveItems.cs" />
     <Compile Include="Notifications\SubscriptionService.cs" />
+    <Compile Include="PersonServices\RetrievePersonItems.cs" />
     <Compile Include="PersonServices\DeletePersonService.cs" />
     <Compile Include="PersonServices\ModifyPersonAutorised.cs" />
     <Compile Include="PersonServices\ModifyPersonService.cs" />

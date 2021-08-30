@@ -25,6 +25,14 @@ namespace Server.ItemServices
             return true;
         }
 
+        public void AddMulitpleItems(List<Item> items)
+        {
+            foreach(Item item in items)
+            {
+                ItemDBUpdateCommand addItem = new AddItemCommand(item);
+                ItemRepository.ExecuteCommand(addItem);
+            }
+        }
 
         public Person FindPerson(string username)
         {

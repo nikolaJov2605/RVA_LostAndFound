@@ -27,7 +27,7 @@ namespace Front
                     Username = p.Username,
                     Name = p.Name,
                     LastName = p.LastName,
-                    Birthdate = p.BirthDate,
+                    Birthdate = Convert.ToDateTime(p.BirthDate),
                     Role = p.Role
                 });
             }

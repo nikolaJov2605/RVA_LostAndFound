@@ -61,6 +61,7 @@
     <Compile Include="Services\IRegistration.cs" />
     <Compile Include="Services\IRetrieveItems.cs" />
     <Compile Include="Services\IRetrievePeople.cs" />
+    <Compile Include="Services\IRetrievePersonItems.cs" />
     <Compile Include="Services\ISignIn.cs" />
     <Compile Include="Services\ISubscription.cs" />
   </ItemGroup>

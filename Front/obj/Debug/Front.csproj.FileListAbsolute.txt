@@ -20,6 +20,8 @@ D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Front\bin\Debug\EntityFramework.S
 D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Front\bin\Debug\EntityFramework.xml
 D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Front\bin\Debug\EntityFramework.SqlServer.xml
 D:\RVA_Projekat\RVA_Projekat_IzgubljenoNadjeno\Front\obj\Debug\Front.csproj.CopyComplete
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Data\Database.mdf
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Data\Database_log.ldf
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Front.exe.config
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Front.exe
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\bin\Debug\Front.pdb
@@ -40,6 +42,7 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Login.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\MainWindow.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyItem.g.cs
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyPerson.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyUser.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\PeopleView.g.cs
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Registracija.g.cs
@@ -50,6 +53,7 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Login.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\MainWindow.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyItem.baml
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyPerson.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyUser.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\PeopleView.baml
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\Registracija.baml
@@ -60,5 +64,3 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.csproj.CopyComplete
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.exe
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Front.pdb
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyPerson.g.cs
-C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\obj\Debug\Views\ModifyPerson.baml

@@ -1,5 +1,6 @@
 ﻿using Common;
 using Common.Services;
+using Front.Commands;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -110,18 +111,21 @@ namespace Front.Views
 
                 Person person = new Person(tbUsername.Text, passwordBox.Password, tbIme.Text, tbPrezime.Text, dpDate.Text, userRole);
 
-                ChannelFactory<IRegistration> factory = new ChannelFactory<IRegistration>("UserRegistration");
+                Command registerPersonCommand = new RegistrationCommand(person);
+                CommandExecutor.Invoker.AddAndExecuteCommand(registerPersonCommand, MainWindow.MainWindowInstance());
+
+                /*ChannelFactory<IRegistration> factory = new ChannelFactory<IRegistration>("UserRegistration");
                 IRegistration proxy = factory.CreateChannel();
 
                 if(proxy.Register(person) == true)
                 {
                     /*MainWindow mainWindow = new MainWindow();
                     this.Close();
-                    mainWindow.Show();*/
+                    mainWindow.Show();
                     Console.WriteLine("User " + person.Username + " registered");
                     this.Close();
                     DeleteInstance();
-                }
+                }*/
                 
             }
             else

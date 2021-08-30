@@ -21,5 +21,8 @@ namespace Common.Services
 
         [OperationContract]
         bool UnAdd(int commandID);
+
+        [OperationContract]
+        void AddMulitpleItems(List<Item> items);
     }
 }

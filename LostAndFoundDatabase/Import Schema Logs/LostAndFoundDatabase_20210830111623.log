@@ -1,0 +1,86 @@
+21/08/30 1:16:23 PM	This log contains information about the import schema operation into project 'LostAndFoundDatabase' on computer 'DESKTOP-TBNJHUN' by user 'nikol'.
+21/08/30 1:16:23 PM	Import of database schema has started.
+21/08/30 1:16:46 PM	Gathering database credentials
+21/08/30 1:16:46 PM	Gathering database options
+21/08/30 1:16:46 PM	Gathering generic database scoped configuration option
+21/08/30 1:16:46 PM	Gathering users
+21/08/30 1:16:46 PM	Gathering roles
+21/08/30 1:16:46 PM	Gathering application roles
+21/08/30 1:16:46 PM	Gathering role memberships
+21/08/30 1:16:46 PM	Gathering filegroups
+21/08/30 1:16:46 PM	Gathering full-text catalogs
+21/08/30 1:16:46 PM	Gathering assemblies
+21/08/30 1:16:46 PM	Gathering certificates
+21/08/30 1:16:46 PM	Gathering asymmetric keys
+21/08/30 1:16:46 PM	Gathering symmetric keys
+21/08/30 1:16:46 PM	Gathering encrypted symmetric keys
+21/08/30 1:16:46 PM	Gathering schemas
+21/08/30 1:16:46 PM	Gathering XML schema collections
+21/08/30 1:16:46 PM	Gathering user-defined data types
+21/08/30 1:16:46 PM	Gathering user-defined types
+21/08/30 1:16:46 PM	Gathering table types
+21/08/30 1:16:46 PM	Gathering unique keys for table types
+21/08/30 1:16:46 PM	Gathering primary keys for table types
+21/08/30 1:16:46 PM	Gathering indexes for table types
+21/08/30 1:17:07 PM	Gathering check constraints for table types
+21/08/30 1:17:07 PM	Gathering default constraints for table types
+21/08/30 1:17:07 PM	Gathering partition functions
+21/08/30 1:17:07 PM	Gathering partition schemes
+21/08/30 1:17:07 PM	Gathering functions
+21/08/30 1:17:07 PM	Gathering encrypted functions
+21/08/30 1:17:07 PM	Gathering aggregates
+21/08/30 1:17:07 PM	Gathering procedures
+21/08/30 1:17:07 PM	Gathering encrypted procedures
+21/08/30 1:17:07 PM	Gathering tables
+21/08/30 1:17:07 PM	Gathering primary keys
+21/08/30 1:17:07 PM	Gathering unique constraints
+21/08/30 1:17:07 PM	Gathering foreign keys
+21/08/30 1:17:07 PM	Gathering default constraints
+21/08/30 1:17:07 PM	Gathering check constraints
+21/08/30 1:17:07 PM	Gathering views
+21/08/30 1:17:07 PM	Gathering encrypted views
+21/08/30 1:17:07 PM	Gathering indexes
+21/08/30 1:17:07 PM	Gathering statistics
+21/08/30 1:17:07 PM	Gathering full-text index stoplists
+21/08/30 1:17:07 PM	Gathering search property lists
+21/08/30 1:17:07 PM	Gathering search properties
+21/08/30 1:17:07 PM	Gathering full-text indexes
+21/08/30 1:17:07 PM	Gathering column store indexes
+21/08/30 1:17:07 PM	Gathering spatial indexes
+21/08/30 1:17:07 PM	Gathering XML indexes
+21/08/30 1:17:07 PM	Gathering Selective XML indexes
+21/08/30 1:17:07 PM	Gathering encrypted triggers
+21/08/30 1:17:07 PM	Gathering triggers
+21/08/30 1:17:07 PM	Gathering encrypted and clr ddl triggers
+21/08/30 1:17:07 PM	Gathering ddl triggers
+21/08/30 1:17:07 PM	Creating edge constraints
+21/08/30 1:17:07 PM	Gathering synonyms
+21/08/30 1:17:07 PM	Gathering defaults
+21/08/30 1:17:07 PM	Gathering data constraint uddt bindings
+21/08/30 1:17:07 PM	Gathering rules
+21/08/30 1:17:07 PM	Gathering data constraint uddt bindings
+21/08/30 1:17:07 PM	Gathering message types
+21/08/30 1:17:07 PM	Gathering queues
+21/08/30 1:17:07 PM	Gathering contracts
+21/08/30 1:17:07 PM	Gathering services
+21/08/30 1:17:07 PM	Gathering event notifications
+21/08/30 1:17:07 PM	Gathering remote service bindings
+21/08/30 1:17:07 PM	Gathering broker priorities
+21/08/30 1:17:07 PM	Gathering signatures
+21/08/30 1:17:07 PM	Gathering data compression options
+21/08/30 1:17:07 PM	Gathering sequence types
+21/08/30 1:17:07 PM	Gathering security policies
+21/08/30 1:17:07 PM	Gather column encryption keys
+21/08/30 1:17:07 PM	Gathering column master keys
+21/08/30 1:17:07 PM	Gathering external data sources
+21/08/30 1:17:07 PM	Gathering external file formats
+21/08/30 1:17:07 PM	Gathering external tables
+21/08/30 1:17:07 PM	Gathering extended properties
+21/08/30 1:17:07 PM	Gathering credentials
+21/08/30 1:17:07 PM	Gathering logins
+21/08/30 1:17:07 PM	Gathering server audits
+21/08/30 1:17:08 PM	Scanning project for duplicate elements
+21/08/30 1:17:08 PM	Finished duplicate element processing
+21/08/30 1:17:08 PM	Finished importing database.
+21/08/30 1:17:08 PM	A summary of the import was saved to the following location: C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\LostAndFoundDatabase\Import Schema Logs\LostAndFoundDatabase_20210830111623.log
+21/08/30 1:17:08 PM	Click Finish to continue...

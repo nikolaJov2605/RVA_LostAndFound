@@ -1,3 +1,5 @@
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Data\Database.mdf
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Data\Database_log.ldf
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Server.exe.config
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Server.exe
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Server.pdb

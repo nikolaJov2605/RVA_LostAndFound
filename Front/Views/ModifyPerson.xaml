@@ -18,9 +18,9 @@
         <TextBox x:Name="tbPrezime" Text="{Binding Person.LastName}" HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <TextBox x:Name="tbUsername" Text="{Binding Person.Username}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="185,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left"  Height="23" Margin="185,272,0,0" VerticalAlignment="Top" Width="190"/>
-        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btnModify" Content="Izmeni" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="394" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnModify_Click"/>
 
-        <DatePicker x:Name="dpDate" Text="{Binding Person.Brithdate}"  HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="105" SelectedDateFormat="Short">
+        <DatePicker x:Name="dpDate" Text="{Binding Person.Birthdate}"  HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="105" SelectedDateFormat="Short">
             <DatePicker.Resources>
                 <Style TargetType="{x:Type DatePickerTextBox}">
                     <Setter Property="Control.Template">
@@ -35,7 +35,7 @@
             </DatePicker.Resources>
         </DatePicker>
         <Label x:Name="lblDateErr" Content="" HorizontalAlignment="Left" Margin="295,185,0,0" VerticalAlignment="Top" Width="94"/>
-        <ComboBox x:Name="cbRole" SelectedIndex="0" HorizontalAlignment="Left" Margin="185,313,0,0" VerticalAlignment="Top" Width="120" Height="23">
+        <ComboBox x:Name="cbRole" SelectedIndex="{Binding Person.RoleView}" HorizontalAlignment="Left" Margin="185,313,0,0" VerticalAlignment="Top" Width="120" Height="23">
             <ComboBoxItem>
                 <TextBlock Text="Izaberite ulogu"/>
             </ComboBoxItem>

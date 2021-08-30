@@ -81,6 +81,16 @@ namespace Server
             ServiceHost modifyPersonAutorisedService = new ServiceHost(typeof(ModifyPersonAutorised));
             modifyPersonAutorisedService.Open();
             Console.WriteLine("MofifyPersonAutorisedService is up...");
+
+
+           /* ServiceHost deletePersonAutorisedService = new ServiceHost(typeof(DeletePersonService));
+            deletePersonAutorisedService.Open();
+            Console.WriteLine("DeletePersonAutorisedService is up...");*/
+
+            ServiceHost retrievePersonItemService = new ServiceHost(typeof(RetrievePersonItems));
+            retrievePersonItemService.Open();
+            Console.WriteLine("RetreivePersonItemsService is up...");
+
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }

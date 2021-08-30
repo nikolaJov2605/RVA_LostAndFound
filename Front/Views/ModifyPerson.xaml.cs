@@ -43,16 +43,13 @@ namespace Front.Views
             DataContext = new PeopleViewModel();
 
             tbIme.Text = "Unesite ime";
-            tbIme.Foreground = Brushes.LightSlateGray;
+            tbIme.Foreground = Brushes.Black;
 
             tbPrezime.Text = "Unesite prezime";
-            tbPrezime.Foreground = Brushes.LightSlateGray;
-
-            dpDate.Text = "Unesite datum";
-            dpDate.Foreground = Brushes.LightSlateGray;
+            tbPrezime.Foreground = Brushes.Black;
 
             tbUsername.Text = "Unesite korisničko ime";
-            tbUsername.Foreground = Brushes.LightSlateGray;
+            tbUsername.Foreground = Brushes.Black;
 
             passwordBox.PasswordChar = '*';
             passwordBox.Foreground = Brushes.Black;
@@ -61,6 +58,11 @@ namespace Front.Views
 
         }
 
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            DeleteInstance();
+        }
 
         private void btnModify_Click(object sender, RoutedEventArgs e)
         {
@@ -109,19 +111,14 @@ namespace Front.Views
                 Command autorisedPersonModification = new AutorisedModifyPersonCommand(person);
                 CommandExecutor.Invoker.AddAndExecuteCommand(autorisedPersonModification, MainWindow.MainWindowInstance());
 
-                
+
                 this.Close();
                 DeleteInstance();
-               
+
 
             }
             else
                 return;
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            DeleteInstance();
         }
     }
 }

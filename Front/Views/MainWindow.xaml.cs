@@ -83,8 +83,12 @@ namespace Front.Views
             if (busy == true)
                 return;
             MainDataViewModel.Items = LoadItemsInfo.LoadItems();
+            PeopleViewModel.People = LoadPeopleInfo.LoadPeople();
             mainWindowInstance.dataGridItems.ItemsSource = null;
             mainWindowInstance.dataGridItems.ItemsSource = MainDataViewModel.Items;
+
+            PeopleView.Instance().dataGridPeople.ItemsSource = null;
+            PeopleView.Instance().dataGridPeople.ItemsSource = PeopleViewModel.People;
         }
 
         private void Window_Closed(object sender, EventArgs e)

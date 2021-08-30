@@ -1,4 +1,5 @@
-﻿using Front.Model;
+﻿using Front.Commands;
+using Front.Model;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -93,6 +94,16 @@ namespace Front.Views
             ModifyPerson modifyPersonWindow = ModifyPerson.Instance();
             modifyPersonWindow.Show();
            
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            PersonModel selectedItem = (PersonModel)instance.dataGridPeople.SelectedItem;
+
+            Command deletePerson = new DeletePersonAutorisedCommand(selectedItem);
+            CommandExecutor.Invoker.AddAndExecuteCommand(deletePerson, MainWindow.MainWindowInstance());
+
+
         }
     }
 }

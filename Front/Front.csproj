@@ -69,6 +69,7 @@
     <Compile Include="Commands\AddItemCommand.cs" />
     <Compile Include="Commands\AutorisedModifyPersonCommand.cs" />
     <Compile Include="Commands\DeleteItemCommand.cs" />
+    <Compile Include="Commands\DeletePersonAutorisedCommand.cs" />
     <Compile Include="Commands\DuplicateCommand.cs" />
     <Compile Include="Commands\LocalCommands\LocalCommandInvoker.cs" />
     <Compile Include="Commands\Command.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Commands\LocalCommands\SearchCommand.cs" />
     <Compile Include="Commands\ModifyItemCommand.cs" />
     <Compile Include="Commands\ModifyPersonCommand.cs" />
+    <Compile Include="Commands\RegistrationCommand.cs" />
     <Compile Include="Commands\ServerCommandInvoker.cs" />
     <Compile Include="Commands\CommandExecutor.cs" />
     <Compile Include="LoadItemsInfo.cs" />

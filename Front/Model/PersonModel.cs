@@ -14,8 +14,9 @@ namespace Front.Model
         private string password;
         private string name;
         private string lastName;
-        private string birthdate;
+        private DateTime birthdate;
         private Role role;
+        private int roleView;
 
         public string Username
         {
@@ -71,7 +72,7 @@ namespace Front.Model
             }
         }
 
-        public string Birthdate
+        public DateTime Birthdate
         {
             get { return birthdate; }
             set
@@ -98,6 +99,19 @@ namespace Front.Model
                     role = value;
                     RaisePropertyChanged("Role");
                 }    
+            }
+        }
+
+        public int RoleView
+        {
+            get { return (int)Role + 1; }
+            set
+            {
+                if(roleView != value)
+                {
+                    roleView = value;
+                    RaisePropertyChanged("RoleView");
+                }
             }
         }
 
