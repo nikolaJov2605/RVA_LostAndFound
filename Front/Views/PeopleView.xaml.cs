@@ -1,9 +1,12 @@
-﻿using Front.Commands;
+﻿using Common;
+using Common.Services;
+using Front.Commands;
 using Front.Model;
 using Front.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -66,6 +69,9 @@ namespace Front.Views
 
                 instance.btnDelete.IsHitTestVisible = true;
                 instance.btnDelete.Background = Brushes.LightGray;
+
+                instance.buttonDetails.IsHitTestVisible = true;
+                instance.buttonDetails.Background = Brushes.LightGray;
             }
             else
             {
@@ -74,6 +80,9 @@ namespace Front.Views
 
                 instance.btnDelete.IsHitTestVisible = false;
                 instance.btnDelete.Background = Brushes.Gray;
+
+                instance.buttonDetails.IsHitTestVisible = false;
+                instance.buttonDetails.Background = Brushes.Gray;
             }
         }
 
@@ -104,6 +113,21 @@ namespace Front.Views
             CommandExecutor.Invoker.AddAndExecuteCommand(deletePerson, MainWindow.MainWindowInstance());
 
 
+        }
+
+        private void buttonDetails_Click(object sender, RoutedEventArgs e)
+        {
+
+            PeopleViewModel.Person = (PersonModel)instance.dataGridPeople.SelectedItem;
+
+            ChannelFactory<ILoadPersonInfo> factory = new ChannelFactory<ILoadPersonInfo>("PersonInfo");
+            ILoadPersonInfo proxy = factory.CreateChannel();
+            Person person = proxy.Load(PeopleViewModel.Person.Username);
+
+            PeopleViewModel.Person.Password = person.Password;
+
+            PersonView personView = PersonView.Instance();
+            personView.Show();
         }
     }
 }

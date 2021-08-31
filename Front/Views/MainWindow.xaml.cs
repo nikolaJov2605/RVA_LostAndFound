@@ -194,6 +194,9 @@ namespace Front.Views
             {
                 selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
 
+                mainWindowInstance.buttonDetails.IsHitTestVisible = true;
+                mainWindowInstance.buttonDetails.Background = Brushes.LightGray;
+
                 if (lblRole.Content.ToString() == "USER")
                 {
                     if (selectedItem.OwnerUsername == lblUsername.Content.ToString())
@@ -209,6 +212,7 @@ namespace Front.Views
 
                         mainWindowInstance.buttonFound.IsHitTestVisible = false;
                         mainWindowInstance.buttonFound.Background = Brushes.Gray;
+
                     }
                     else
                     {
@@ -221,8 +225,11 @@ namespace Front.Views
                         mainWindowInstance.buttonDuplicate.IsHitTestVisible = false;
                         mainWindowInstance.buttonDuplicate.Background = Brushes.Gray;
 
-                        mainWindowInstance.buttonFound.IsHitTestVisible = true;
-                        mainWindowInstance.buttonFound.Background = Brushes.Green;
+                        if(!selectedItem.IsFound)
+                        {
+                            mainWindowInstance.buttonFound.IsHitTestVisible = true;
+                            mainWindowInstance.buttonFound.Background = Brushes.Green;
+                        }
                     }
                 }
                 else
@@ -236,8 +243,11 @@ namespace Front.Views
                     mainWindowInstance.buttonDuplicate.IsHitTestVisible = true;
                     mainWindowInstance.buttonDuplicate.Background = Brushes.LightGray;
 
-                    mainWindowInstance.buttonFound.IsHitTestVisible = true;
-                    mainWindowInstance.buttonFound.Background = Brushes.Green;
+                    if (!selectedItem.IsFound)
+                    {
+                        mainWindowInstance.buttonFound.IsHitTestVisible = true;
+                        mainWindowInstance.buttonFound.Background = Brushes.Green;
+                    }
                 }
             }
             else
@@ -253,6 +263,9 @@ namespace Front.Views
 
                 mainWindowInstance.buttonFound.IsHitTestVisible = false;
                 mainWindowInstance.buttonFound.Background = Brushes.Gray;
+
+                mainWindowInstance.buttonDetails.IsHitTestVisible = false;
+                mainWindowInstance.buttonDetails.Background = Brushes.Gray;
             }
         }
 
@@ -289,6 +302,14 @@ namespace Front.Views
             selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
             Command foundCommand = new FoundItemCommand(selectedItem.Id, lblUsername.Content.ToString());
             CommandExecutor.Invoker.AddAndExecuteCommand(foundCommand, mainWindowInstance);
+        }
+
+        private void buttonDetails_Click(object sender, RoutedEventArgs e)
+        {
+            selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
+            ItemViewModel.Item = selectedItem;
+            ItemView itemView = ItemView.Instance();
+            itemView.Show();
         }
     }
 }

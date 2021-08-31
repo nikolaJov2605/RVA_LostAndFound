@@ -1,0 +1,25 @@
+﻿<Window x:Class="Front.Views.ItemView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front.Views"
+        mc:Ignorable="d"
+        Title="ItemView" Height="472.575" Width="500" Closed="Window_Closed">
+    <Grid>
+        <Label x:Name="lblNaziv" Content="{Binding Item.Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="35" Width="474" HorizontalContentAlignment="Center" Height="55"/>
+        <Label x:Name="label" Content="ID: " HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" FontSize="20" Foreground="LightSlateGray"/>
+        <Label x:Name="label1" Content="Datum: " HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" FontSize="20" Foreground="LightSlateGray"/>
+        <Label x:Name="label2" Content="Lokacija: " HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" FontSize="20" Foreground="LightSlateGray"/>
+        <Label x:Name="label3" Content="Opis: " HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" FontSize="20" Foreground="LightSlateGray"/>
+        <Label x:Name="label4" Content="Vlasnik: " HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.27,0.443" Foreground="LightSlateGray"/>
+        <Label x:Name="label5" Content="Pronašao: " HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top" FontSize="20" Foreground="LightSlateGray"/>
+
+        <Label x:Name="lblID" Content="{Binding Item.Id}" HorizontalAlignment="Left" Margin="116,64,0,0" VerticalAlignment="Top" Height="37" Width="368" FontSize="20"/>
+        <Label x:Name="lblDate" Content="{Binding Item.Date}" HorizontalAlignment="Left" Margin="116,114,0,0" VerticalAlignment="Top" Height="37" Width="368" FontSize="20"/>
+        <Label x:Name="lblLocation" Content="{Binding Item.Location}" HorizontalAlignment="Left" Margin="116,164,0,0" VerticalAlignment="Top" Height="37" Width="368" FontSize="20"/>
+        <TextBlock x:Name="tbDescription" TextWrapping="WrapWithOverflow" Text="{Binding Item.Description}" HorizontalAlignment="Left" Margin="116,214,0,0" VerticalAlignment="Top" FontSize="20" Width="368" Height="96"/>
+        <Label x:Name="lblOwner" Content="{Binding Item.OwnerUsername}" HorizontalAlignment="Left" Margin="116,314,0,0" VerticalAlignment="Top" Height="37" Width="368" FontSize="20"/>
+        <Label x:Name="lblFinder" Content="{Binding Item.FinderUsername}" HorizontalAlignment="Left" Margin="116,364,0,0" VerticalAlignment="Top" Height="37" Width="368" FontSize="20"/>
+    </Grid>
+</Window>

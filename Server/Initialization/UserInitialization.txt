@@ -1,0 +1,9 @@
+admin,admin,Nikola,Jovićević,26/05/1999,ADMIN
+marko,marko,Marko,Marković,15/03/1993,ADMIN
+petar,petar,Petar,Petrović,03/02/1997,USER
+jovana,jovana,Jovana,Stojanović,12/09/2001,ADMIN
+milan,milan,Milan,Milanović,24/06/2002,USER
+rade,rade,Rade,Radić,16/12/1999,USER
+mladen,mladen,Mladen,Mladenović,12/08/2005,USER
+stanislav,stanislav,Stanislav,Stanimirović,31/05/1978,ADMIN
+milena,milena,Milena,Stanković,01/01/2002,USER

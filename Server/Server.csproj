@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseInitialization\IDatabaseInitializer.cs" />
+    <Compile Include="DatabaseInitialization\ItemInitializer.cs" />
+    <Compile Include="DatabaseInitialization\LoadFromFile.cs" />
+    <Compile Include="DatabaseInitialization\UserInitializer.cs" />
     <Compile Include="ItemServices\AddItem.cs" />
     <Compile Include="ItemServices\DeleteItem.cs" />
     <Compile Include="ItemServices\LoadItem.cs" />
@@ -85,6 +89,10 @@
       <Project>{8032CD81-F08A-4701-BB94-B0E5C011315F}</Project>
       <Name>Database</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Initialization\ItemInitialization.txt" />
+    <Content Include="Initialization\UserInitialization.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

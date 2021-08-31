@@ -96,11 +96,15 @@
     <Compile Include="SearchCriterias\SearchCommandExecutor.cs" />
     <Compile Include="SearchParameters.cs" />
     <Compile Include="UnsubscribeUser.cs" />
+    <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
     <Compile Include="ViewModel\ModifyItemViewModel.cs" />
     <Compile Include="ViewModel\PeopleViewModel.cs" />
     <Compile Include="Views\AddItem.xaml.cs">
       <DependentUpon>AddItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemView.xaml.cs">
+      <DependentUpon>ItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -120,6 +124,9 @@
     <Compile Include="Views\PeopleView.xaml.cs">
       <DependentUpon>PeopleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Registracija.xaml.cs">
       <DependentUpon>Registracija.xaml</DependentUpon>
     </Compile>
@@ -128,6 +135,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PeopleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PersonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

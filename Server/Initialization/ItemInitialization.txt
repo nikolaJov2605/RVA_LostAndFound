@@ -1,0 +1,6 @@
+﻿26/08/2021,Naočare,FTN Novi Sad - čitaonica,Crne naočare sa velikim okvirom.,stanislav, ,FALSE
+27/08/2021,Sat,Limanski park - kod UniCredit banke,Srebrni ručni sat.,marko,jovana,TRUE
+28/08/2021,Indeks,FTN Novi Sad - amfiteatar A2,Indeks na ime Milan Milanović.,milan, , FALSE
+29/08/2021,Lančić,Novi Sad - Centar,Izgubljen srebrni lančić u okolini katedrale.,rade, ,FALSE
+31/08/2021,Dukserica,Novi Sad - Tereni kod Promenade,Dukserica je plave boje sa crvenim linijama.,petar, ,FALSE
+01/09/2021,Telefon,Beograd - Kalemegdan,Huawei P20 sa crnom maskicom.,milena,mladen,TRUE

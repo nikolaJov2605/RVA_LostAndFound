@@ -11,6 +11,7 @@ using Common;
 using Server.Notifications;
 using Server.SignIn;
 using Server.PersonServices;
+using Server.DatabaseInitialization;
 
 namespace Server
 {
@@ -29,6 +30,16 @@ namespace Server
                 //Truncate Table to delete all old records.
                 context.Database.ExecuteSqlCommand("DELETE FROM [People]");
             }*/
+
+            Console.WriteLine("Adding initial data to database...");
+
+            IDatabaseInitializer initializeItems = new ItemInitializer();
+            IDatabaseInitializer initializePeople = new UserInitializer();
+            initializeItems.InitializeTable();
+            initializePeople.InitializeTable();
+
+            Console.WriteLine("Initial data added to database...");
+
 
             ServiceHost registrationService = new ServiceHost(typeof(Registration.Registration));
             registrationService.Open();
@@ -81,11 +92,6 @@ namespace Server
             ServiceHost modifyPersonAutorisedService = new ServiceHost(typeof(ModifyPersonAutorised));
             modifyPersonAutorisedService.Open();
             Console.WriteLine("MofifyPersonAutorisedService is up...");
-
-
-           /* ServiceHost deletePersonAutorisedService = new ServiceHost(typeof(DeletePersonService));
-            deletePersonAutorisedService.Open();
-            Console.WriteLine("DeletePersonAutorisedService is up...");*/
 
             ServiceHost retrievePersonItemService = new ServiceHost(typeof(RetrievePersonItems));
             retrievePersonItemService.Open();

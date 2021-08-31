@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="930" Closed="Window_Closed" ResizeMode="NoResize" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
-    <Grid>
+        Title="MainWindow" Height="460.4" Width="930" Closed="Window_Closed" ResizeMode="NoResize" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
+    <Grid Margin="0,0,0.2,-10">
         <GroupBox x:Name="groupBox" Header="Korisnik" HorizontalAlignment="Left" Height="176" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
             <Grid Margin="0,0,0,-11.8">
                 <Label x:Name="lblUsername" Content="{Binding Person.Username}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
@@ -90,7 +90,7 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox2" Header="Pretraga" HorizontalAlignment="Left" Height="131" Margin="134,248,0,0" VerticalAlignment="Top" Width="620">
+        <GroupBox x:Name="groupBox2" Header="Pretraga" HorizontalAlignment="Left" Height="131" Margin="134,253,0,0" VerticalAlignment="Top" Width="620">
             <Grid Margin="0,-10,-2,-0.2">
                 <Label x:Name="label" Content="Po datumu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,10,0,0"/>
                 <Label x:Name="label1" Content="Početni datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,36,0,0"/>
@@ -133,7 +133,7 @@
                 <TextBox x:Name="tbPronalazac" HorizontalAlignment="Left" Height="20" Margin="436,82,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="buttonSearch" Content="Pretraži" HorizontalAlignment="Left" Margin="679,384,0,0" VerticalAlignment="Top" Width="75" Click="buttonSearch_Click"/>
+        <Button x:Name="buttonSearch" Content="Pretraži" HorizontalAlignment="Left" Margin="679,389,0,0" VerticalAlignment="Top" Width="75" Click="buttonSearch_Click"/>
         <Button x:Name="buttonUndo" Content="Poništi" Visibility="Hidden" HorizontalAlignment="Left" Margin="679,384,0,0" VerticalAlignment="Top" Width="75" Click="buttonUndo_Click"/>
         <Button x:Name="buttonRegister" Content="Registruj novog" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="100" Click="button_Click"/>
         <Button x:Name="buttonPeople" Content="Prikaži korisnike" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="100" Click="buttonPeople_Click"/>
@@ -142,6 +142,7 @@
         <Button x:Name="buttonDelete" Content="Obriši izabran predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,338,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDelete_Click"/>
         <Button x:Name="buttonDuplicate" Content="Dupliraj izabrani predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,367,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDuplicate_Click"/>
         <Button x:Name="buttonFound" Content="Pronašao!" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,279,0,0" VerticalAlignment="Top" Width="144" Height="22" Click="buttonFound_Click"/>
+        <Button x:Name="buttonDetails" Content="Detalji" Background="Gray" HorizontalAlignment="Left" Margin="769,396,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDetails_Click"/>
 
 
     </Grid>

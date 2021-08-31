@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Front\App.xaml
-81919838892
+10-1662328902
 
-45-1629794839
+48-1841888223
 20-2007198010
-Views\AddItem.xaml;Views\Login.xaml;Views\MainWindow.xaml;Views\ModifyItem.xaml;Views\ModifyPerson.xaml;Views\ModifyUser.xaml;Views\PeopleView.xaml;Views\Registracija.xaml;
+Views\AddItem.xaml;Views\ItemView.xaml;Views\Login.xaml;Views\MainWindow.xaml;Views\ModifyItem.xaml;Views\ModifyPerson.xaml;Views\ModifyUser.xaml;Views\PeopleView.xaml;Views\PersonView.xaml;Views\Registracija.xaml;
 
 False
 
