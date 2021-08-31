@@ -26,17 +26,34 @@ namespace Front
             {
                 DateTime d = Convert.ToDateTime(i.Date);
                 
-                retList.Add(new ItemModel
+                if(i.Finder == null)
                 {
-                    Id = i.Id,
-                    Date = d,
-                    Title = i.Title,
-                    Location = i.Location,
-                    Description = i.Description,
-                    OwnerUsername = i.Owner.Username,
-                    FinderUsername = null,
-                    IsFound = i.IsFound
-                });
+                    retList.Add(new ItemModel
+                    {
+                        Id = i.Id,
+                        Date = d,
+                        Title = i.Title,
+                        Location = i.Location,
+                        Description = i.Description,
+                        OwnerUsername = i.Owner.Username,
+                        FinderUsername = null,
+                        IsFound = i.IsFound
+                    });
+                }
+                else
+                {
+                    retList.Add(new ItemModel
+                    {
+                        Id = i.Id,
+                        Date = d,
+                        Title = i.Title,
+                        Location = i.Location,
+                        Description = i.Description,
+                        OwnerUsername = i.Owner.Username,
+                        FinderUsername = i.Finder.Username,
+                        IsFound = i.IsFound
+                    });
+                }
             }
             return retList;
         }

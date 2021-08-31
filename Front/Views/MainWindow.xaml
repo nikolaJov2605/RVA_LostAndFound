@@ -18,7 +18,19 @@
 
             </Grid>
         </GroupBox>
-        <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single" Height="233" Margin="149,10,10.2,0" VerticalAlignment="Top" SelectionChanged="dataGridItems_SelectionChanged">
+        <DataGrid x:Name="dataGridItems" AutoGenerateColumns="False" ItemsSource="{Binding Items}" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single" Height="233" Margin="149,10,10.2,0" VerticalAlignment="Top" SelectionChanged="dataGridItems_SelectionChanged">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsFound}" Value="false">
+                            <Setter Property="Background" Value="White"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IsFound}" Value="true">
+                            <Setter Property="Background" Value="LightGreen"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Path=Date, StringFormat=\{0:dd/MM/yyyy \}}" Width="*">
                     <DataGridTextColumn.HeaderStyle>
@@ -126,10 +138,11 @@
         <Button x:Name="buttonRegister" Content="Registruj novog" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="100" Click="button_Click"/>
         <Button x:Name="buttonPeople" Content="Prikaži korisnike" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="100" Click="buttonPeople_Click"/>
 
-        <Button x:Name="buttonModifyItem" Content="Izmeni izabran predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,277,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonModifyItem_Click"/>
-        <Button x:Name="buttonDelete" Content="Obriši izabran predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,306,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDelete_Click"/>
-        <Button x:Name="buttonDuplicate" Content="Dupliraj izabrani predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,335,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDuplicate_Click"/>
-        
+        <Button x:Name="buttonModifyItem" Content="Izmeni izabran predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,309,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonModifyItem_Click"/>
+        <Button x:Name="buttonDelete" Content="Obriši izabran predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,338,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDelete_Click"/>
+        <Button x:Name="buttonDuplicate" Content="Dupliraj izabrani predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,367,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDuplicate_Click"/>
+        <Button x:Name="buttonFound" Content="Pronašao!" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,279,0,0" VerticalAlignment="Top" Width="144" Height="22" Click="buttonFound_Click"/>
+
 
     </Grid>
 </Window>

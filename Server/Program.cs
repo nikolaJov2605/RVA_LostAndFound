@@ -91,6 +91,10 @@ namespace Server
             retrievePersonItemService.Open();
             Console.WriteLine("RetreivePersonItemsService is up...");
 
+            ServiceHost setItemFoundService = new ServiceHost(typeof(SetItemIsFound));
+            setItemFoundService.Open();
+            Console.WriteLine("SetItemFoundSercice is up...");
+
             Console.WriteLine("Server is fully up!");
             Console.ReadLine();
         }

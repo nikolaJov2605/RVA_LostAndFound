@@ -71,6 +71,7 @@
     <Compile Include="Commands\DeleteItemCommand.cs" />
     <Compile Include="Commands\DeletePersonAutorisedCommand.cs" />
     <Compile Include="Commands\DuplicateCommand.cs" />
+    <Compile Include="Commands\FoundItemCommand.cs" />
     <Compile Include="Commands\LocalCommands\LocalCommandInvoker.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandInvoker.cs" />

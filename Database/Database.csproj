@@ -83,6 +83,8 @@
     <Compile Include="ItemCommands\ItemDBUpdateCommand.cs" />
     <Compile Include="ItemCommands\ItemsUpdateCommands\AddItemDBCommand.cs" />
     <Compile Include="ItemCommands\ItemsUpdateCommands\ModifyItemDBCommand.cs" />
+    <Compile Include="ItemCommands\ItemsUpdateCommands\SetItemFoundCommand.cs" />
+    <Compile Include="ItemCommands\ItemsUpdateCommands\UndoItemFoundCommand.cs" />
     <Compile Include="ItemCommands\SingleItemQuery.cs" />
     <Compile Include="ItemCommands\SingleItemsQueries\FindById.cs" />
     <Compile Include="ItemRepository.cs" />

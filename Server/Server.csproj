@@ -59,6 +59,7 @@
     <Compile Include="ItemServices\LoadItem.cs" />
     <Compile Include="ItemServices\ModifyItem.cs" />
     <Compile Include="ItemServices\RetrieveItems.cs" />
+    <Compile Include="ItemServices\SetItemIsFound.cs" />
     <Compile Include="Notifications\SubscriptionService.cs" />
     <Compile Include="PersonServices\RetrievePersonItems.cs" />
     <Compile Include="PersonServices\DeletePersonService.cs" />

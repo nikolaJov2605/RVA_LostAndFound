@@ -206,6 +206,9 @@ namespace Front.Views
 
                         mainWindowInstance.buttonDuplicate.IsHitTestVisible = true;
                         mainWindowInstance.buttonDuplicate.Background = Brushes.LightGray;
+
+                        mainWindowInstance.buttonFound.IsHitTestVisible = false;
+                        mainWindowInstance.buttonFound.Background = Brushes.Gray;
                     }
                     else
                     {
@@ -217,6 +220,9 @@ namespace Front.Views
 
                         mainWindowInstance.buttonDuplicate.IsHitTestVisible = false;
                         mainWindowInstance.buttonDuplicate.Background = Brushes.Gray;
+
+                        mainWindowInstance.buttonFound.IsHitTestVisible = true;
+                        mainWindowInstance.buttonFound.Background = Brushes.Green;
                     }
                 }
                 else
@@ -229,6 +235,9 @@ namespace Front.Views
 
                     mainWindowInstance.buttonDuplicate.IsHitTestVisible = true;
                     mainWindowInstance.buttonDuplicate.Background = Brushes.LightGray;
+
+                    mainWindowInstance.buttonFound.IsHitTestVisible = true;
+                    mainWindowInstance.buttonFound.Background = Brushes.Green;
                 }
             }
             else
@@ -241,6 +250,9 @@ namespace Front.Views
 
                 mainWindowInstance.buttonDuplicate.IsHitTestVisible = false;
                 mainWindowInstance.buttonDuplicate.Background = Brushes.Gray;
+
+                mainWindowInstance.buttonFound.IsHitTestVisible = false;
+                mainWindowInstance.buttonFound.Background = Brushes.Gray;
             }
         }
 
@@ -270,6 +282,13 @@ namespace Front.Views
         {
             PeopleView peopleView = PeopleView.Instance();
             peopleView.Show();
+        }
+
+        private void buttonFound_Click(object sender, RoutedEventArgs e)
+        {
+            selectedItem = (ItemModel)mainWindowInstance.dataGridItems.SelectedItem;
+            Command foundCommand = new FoundItemCommand(selectedItem.Id, lblUsername.Content.ToString());
+            CommandExecutor.Invoker.AddAndExecuteCommand(foundCommand, mainWindowInstance);
         }
     }
 }
