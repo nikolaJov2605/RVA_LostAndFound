@@ -27,7 +27,7 @@ namespace Server.DatabaseInitialization
                 }
                 context.SaveChanges();
 
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "All initial users have been loaded to database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "All initial users have been loaded to database");
                 loggingManager.LogEvent(eventLog);
             }
         }

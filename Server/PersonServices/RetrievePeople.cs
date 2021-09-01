@@ -18,7 +18,7 @@ namespace Server.PersonServices
         public List<Person> LoadPeople()
         {
             PersonQueries query = new RetrieveAllPersons();
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database");
             loggingManager.LogEvent(eventLog);
             return PersonRepository.ExecuteQuery(query);
 

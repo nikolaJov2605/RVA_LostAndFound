@@ -20,7 +20,7 @@ namespace Server.PersonServices
             PersonDBUpdateCommand modifyCommand = new ModifyPersonDBCommand(p);
             PersonRepository.ExecuteCommand(modifyCommand);
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_MODIFY_PERSON_METHOD: Person {p.Username} has been modified.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_MODIFY_PERSON_METHOD: Person {p.Username} has been modified");
             loggingManager.LogEvent(eventLog);
         }
     }

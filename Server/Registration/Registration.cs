@@ -23,7 +23,7 @@ namespace Server.Registration
             PersonCheckings personExistsCheck = new PersonExistsCheck(person);
             if(PersonRepository.ExecuteCheck(personExistsCheck))
             {
-                EventLog eventLog = new EventLog(DateTime.Now, Status.ERROR, $"EXECUTED REGISTER METHOD: Registration failed because person with username {person.Username} allready exist in database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.ERROR, $"EXECUTED REGISTER METHOD: Registration failed because person with username {person.Username} allready exist in database");
                 loggingManager.LogEvent(eventLog);
                 return false;
             }
@@ -32,7 +32,7 @@ namespace Server.Registration
                 PersonDBUpdateCommand addPerson = new AddPersonDBCommand(person);
                 PersonRepository.ExecuteCommand(addPerson);
 
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED REGISTER METHOD: Person {person.Username} successfully registered.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED REGISTER METHOD: Person {person.Username} successfully registered");
                 loggingManager.LogEvent(eventLog);
                 return true;
             }

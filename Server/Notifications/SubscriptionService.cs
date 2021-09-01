@@ -31,7 +31,7 @@ namespace Server.Notifications
             {
                 cl.NotifyForChanges();
             }
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_NOTIFY_ALL_METHOD: All clients are notified.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_NOTIFY_ALL_METHOD: All clients are notified");
             loggingManager.LogEvent(eventLog);
         }
 

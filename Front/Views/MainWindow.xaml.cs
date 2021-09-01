@@ -311,5 +311,11 @@ namespace Front.Views
             ItemView itemView = ItemView.Instance();
             itemView.Show();
         }
+
+        private void buttonLogger_Click(object sender, RoutedEventArgs e)
+        {
+            LogView logView = LogView.Instance();
+            logView.Show();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace Server.ItemServices
         {
             ItemQueries retrieveAll = new RetrieveAllItemsQuery();
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database");
             loggingManager.LogEvent(eventLog);
 
             return ItemRepository.ExecuteQuery(retrieveAll);

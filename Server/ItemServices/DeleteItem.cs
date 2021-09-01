@@ -25,12 +25,12 @@ namespace Server.ItemServices
                 var query = context.Items.Include("Owner").Include("Finder").Where(x => x.Id == key).First<Item>();
                 if (query != null)
                     return query;
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_FIND_ITEM_METHOD: Item {query.Title} found in database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_FIND_ITEM_METHOD: Item {query.Title} found in database");
                 loggingManager.LogEvent(eventLog);
             }
             catch
             {
-                EventLog eventLog = new EventLog(DateTime.Now, Status.ERROR, $"EXECUTED_FIND_ITEM_METHOD: Item with key {key} couldn't be found in database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.ERROR, $"EXECUTED_FIND_ITEM_METHOD: Item with key {key} couldn't be found in database");
                 loggingManager.LogEvent(eventLog);
                 return null;
             }
@@ -50,7 +50,7 @@ namespace Server.ItemServices
             }
             else
             {
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_DELETE_ITEM_METHOD: Item with key {key} doesn't exist, and couldn't be deleted from database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_DELETE_ITEM_METHOD: Item with key {key} doesn't exist, and couldn't be deleted from database");
                 loggingManager.LogEvent(eventLog);
                 return false;
             }

@@ -83,7 +83,9 @@
     <Compile Include="Commands\CommandExecutor.cs" />
     <Compile Include="LoadItemsInfo.cs" />
     <Compile Include="LoadLoggedPerson.cs" />
+    <Compile Include="LoadLogger.cs" />
     <Compile Include="LoadPeopleInfo.cs" />
+    <Compile Include="Model\EventLogModel.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Model\PersonModel.cs" />
     <Compile Include="FieldValidation.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="SearchParameters.cs" />
     <Compile Include="UnsubscribeUser.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
+    <Compile Include="ViewModel\LoggerViewModel.cs" />
     <Compile Include="ViewModel\MainDataViewModel.cs" />
     <Compile Include="ViewModel\ModifyItemViewModel.cs" />
     <Compile Include="ViewModel\PeopleViewModel.cs" />
@@ -108,6 +111,9 @@
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogView.xaml.cs">
+      <DependentUpon>LogView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -143,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

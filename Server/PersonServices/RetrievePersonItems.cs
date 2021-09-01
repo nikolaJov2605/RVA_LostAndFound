@@ -20,7 +20,7 @@ namespace Server.PersonServices
             ItemQueries query = new RetrievePersonItemsQuery(person);
 
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED GET_PERSON_ITEMS METHOD: Loaded person items from person {person.Username}.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED GET_PERSON_ITEMS METHOD: Loaded person items from person {person.Username}");
             loggingManager.LogEvent(eventLog);
 
             return ItemRepository.ExecuteQuery(query);

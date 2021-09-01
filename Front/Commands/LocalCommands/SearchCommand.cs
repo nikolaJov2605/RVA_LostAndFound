@@ -26,7 +26,7 @@ namespace Front.Commands.LocalCommands
         {
             searchCriteria.Search(sourceList, parameters);
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED SEARCH COMMAND: Frontend items list updated.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED SEARCH COMMAND: Frontend items list updated");
             loggingManager.LogEvent(eventLog);
         }
 

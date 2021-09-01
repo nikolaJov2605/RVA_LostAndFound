@@ -24,7 +24,7 @@ namespace Server.ItemServices
             ItemDBUpdateCommand addItem = new AddItemCommand(item);
             ItemRepository.ExecuteCommand(addItem);
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_ADD_ITEM_METHOD: Item {item.Title} has been added to database.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_ADD_ITEM_METHOD: Item {item.Title} has been added to database");
             loggingManager.LogEvent(eventLog);
 
             return true;
@@ -37,7 +37,7 @@ namespace Server.ItemServices
                 ItemDBUpdateCommand addItem = new AddItemCommand(item);
                 ItemRepository.ExecuteCommand(addItem);
             }
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_ADD_MULTIPLE_ITEMS_METHOD: Several items have been added to database.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_ADD_MULTIPLE_ITEMS_METHOD: Several items have been added to database");
             loggingManager.LogEvent(eventLog);
         }
 
@@ -47,13 +47,13 @@ namespace Server.ItemServices
             Person person = PersonRepository.ExecuteQuery(personQuery);
             if(person != null)
             {
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_FIND_PERSON_METHOD: Person {username} found in database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_FIND_PERSON_METHOD: Person {username} found in database");
                 loggingManager.LogEvent(eventLog);
                 return person;
             }
             else
             {
-                EventLog eventLog = new EventLog(DateTime.Now, Status.ERROR, $"EXECUTED_FIND_PERSON_METHOD: Couldn't find person {username} in database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.ERROR, $"EXECUTED_FIND_PERSON_METHOD: Couldn't find person {username} in database");
                 loggingManager.LogEvent(eventLog);
                 return null;
             }
@@ -65,7 +65,7 @@ namespace Server.ItemServices
             int keyVal = ItemRepository.ModifyItem(commandIDGeneration);
 
             EventLog eventDebugLog = new EventLog(DateTime.Now, Status.DEBUG, $"EXECUTED_GET_AVAILABLE_COMMAND_ID: Generated commandID value is {keyVal}");
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_GET_AVAILABLE_COMMAND_ID: commandID is generated.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_GET_AVAILABLE_COMMAND_ID: commandID is generated");
             loggingManager.LogEvent(eventDebugLog);
             loggingManager.LogEvent(eventLog);
             return keyVal;
@@ -78,7 +78,7 @@ namespace Server.ItemServices
             {
                 ItemDBUpdateCommand deleteByCommandID = new DeleteItemByCommandID(commandID);
                 ItemRepository.ExecuteCommand(deleteByCommandID);
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_UN_ADD_COMMAND_ID: Item with commandID: {commandID} successfully removed from database.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_UN_ADD_COMMAND_ID: Item with commandID: {commandID} successfully removed from database");
                 loggingManager.LogEvent(eventLog);
                 return true;
             }

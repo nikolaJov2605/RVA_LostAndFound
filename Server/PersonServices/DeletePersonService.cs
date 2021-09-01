@@ -20,7 +20,7 @@ namespace Server.PersonServices
             PersonDBUpdateCommand deleteCommand = new DeletePersonDBCommand(p);
             PersonRepository.ExecuteCommand(deleteCommand);
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_DELETE_PERSON_METHOD: Person {p.Username} has been deleted from database.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_DELETE_PERSON_METHOD: Person {p.Username} has been deleted from database");
             loggingManager.LogEvent(eventLog);
         }
     }

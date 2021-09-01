@@ -1,0 +1,40 @@
+﻿<Window x:Class="Front.Views.LogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front.Views"
+        mc:Ignorable="d"
+        Title="LogView" Height="450" Width="700" Closed="Window_Closed">
+    <Grid>
+        <DataGrid x:Name="dataGridLog" AutoGenerateColumns="False" ItemsSource="{Binding LogList}" HorizontalAlignment="Left" Height="356" Margin="10,10,0,0" VerticalAlignment="Top" Width="674">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vreme" Binding="{Binding Path=Time, StringFormat=\{0:dd/MM/yyyy \}}" Width="70">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Binding="{Binding Path=Status}" Width="50">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Poruka" Binding="{Binding Path=Message}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.FontSize" Value="15"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button" Content="Osveži prikaz" HorizontalAlignment="Left" Margin="246,381,0,0" VerticalAlignment="Top" Width="196" Height="29" FontSize="18" Click="button_Click"/>
+    </Grid>
+</Window>

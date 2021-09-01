@@ -19,7 +19,7 @@ namespace Server.ItemServices
         {
             SingleItemQuery getItem = new FindById(id);
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_LOAD_ITEM_METHOD: Item with key {id} loaded from database.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_LOAD_ITEM_METHOD: Item with key {id} loaded from database");
             loggingManager.LogEvent(eventLog);
             return ItemRepository.GetItem(getItem);
         }

@@ -18,13 +18,13 @@ namespace Server.SignIn
             if (person != null && person.Password == password)
             {
                 // login
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED SIGN_IN METHOD: Person {username} successfully signed in.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED SIGN_IN METHOD: Person {username} successfully signed in");
                 loggingManager.LogEvent(eventLog);
                 return true;
             }
             else
             {
-                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED SIGN_IN METHOD: Person {username} couldn't sign in. Wrong credentials.");
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED SIGN_IN METHOD: Person {username} couldn't sign in. Wrong credentials");
                 loggingManager.LogEvent(eventLog);
                 return false;
             }

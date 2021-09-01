@@ -20,7 +20,7 @@ namespace Server.ItemServices
             ItemDBUpdateCommand modifyItemCommand = new ModifyItemDBCommand(toModify, modified);
             ItemRepository.ExecuteCommand(modifyItemCommand);
 
-            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_MODIFY_ITEM_METHOD: Item {toModify.Title} has been modified. New item title is {modified.Title}.");
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_MODIFY_ITEM_METHOD: Item {toModify.Title} has been modified. New item title is {modified.Title}");
             loggingManager.LogEvent(eventLog);
         }
     }

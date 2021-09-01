@@ -143,6 +143,7 @@
         <Button x:Name="buttonDuplicate" Content="Dupliraj izabrani predmet" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,367,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDuplicate_Click"/>
         <Button x:Name="buttonFound" Content="Pronašao!" IsHitTestVisible="False" Background="Gray" HorizontalAlignment="Left" Margin="769,279,0,0" VerticalAlignment="Top" Width="144" Height="22" Click="buttonFound_Click"/>
         <Button x:Name="buttonDetails" Content="Detalji" Background="Gray" HorizontalAlignment="Left" Margin="769,396,0,0" VerticalAlignment="Top" Width="144" Height="24" Click="buttonDetails_Click"/>
+        <Button x:Name="buttonLogger" Content="Prikaži logove" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="100" Height="19" Click="buttonLogger_Click"/>
 
 
     </Grid>
