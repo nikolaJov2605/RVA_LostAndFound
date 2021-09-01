@@ -104,3 +104,5 @@ OPERATION EXECUTED: Time: |21/09/01 11:34:56 PM|, Status: |INFO|, Message: |EXEC
 OPERATION EXECUTED: Time: |21/09/01 11:34:56 PM|, Status: |INFO|, Message: |EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database|.
 OPERATION EXECUTED: Time: |21/09/01 11:34:56 PM|, Status: |INFO|, Message: |EXECUTED LOAD_PERSON METHOD: person admin loaded from database|.
 OPERATION EXECUTED: Time: |21/09/01 11:34:56 PM|, Status: |INFO|, Message: |EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database|.
+OPERATION EXECUTED: Time: |21/09/02 1:17:20 AM|, Status: |INFO|, Message: |All initial items have been loaded to database|.
+OPERATION EXECUTED: Time: |21/09/02 1:17:20 AM|, Status: |INFO|, Message: |All initial users have been loaded to database|.
