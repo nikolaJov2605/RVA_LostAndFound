@@ -17,3 +17,5 @@ C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Serve
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.exe
 C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\obj\Debug\Server.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Logger.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Server\bin\Debug\Logger.pdb

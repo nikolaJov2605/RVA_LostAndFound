@@ -1,0 +1,6 @@
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Logger\bin\Debug\Logger.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Logger\bin\Debug\Logger.pdb
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Logger\obj\Debug\Logger.dll
+C:\Users\nikol\OneDrive\Dokumenti\GitHub\RVA_LostAndFound\Logger\obj\Debug\Logger.pdb

@@ -89,6 +89,10 @@
       <Project>{8032CD81-F08A-4701-BB94-B0E5C011315F}</Project>
       <Name>Database</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{DCC40007-7A8A-40C8-AB53-36F468D0560E}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Initialization\ItemInitialization.txt" />

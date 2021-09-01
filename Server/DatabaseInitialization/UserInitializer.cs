@@ -1,5 +1,6 @@
 ﻿using Common;
 using Database;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Server.DatabaseInitialization
 {
     public class UserInitializer : IDatabaseInitializer
     {
+        ILoggingManager loggingManager = new LoggingManager();
         public void InitializeTable()
         {
             List<Person> initialPersonList = LoadFromFile.LoadPeople();
@@ -24,6 +26,9 @@ namespace Server.DatabaseInitialization
                         context.Persons.Add(person);
                 }
                 context.SaveChanges();
+
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "All initial users have been loaded to database.");
+                loggingManager.LogEvent(eventLog);
             }
         }
     }

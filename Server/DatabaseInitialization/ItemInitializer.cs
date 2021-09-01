@@ -1,5 +1,6 @@
 ﻿using Common;
 using Database;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,6 +13,7 @@ namespace Server.DatabaseInitialization
 {
     public class ItemInitializer : IDatabaseInitializer
     {
+        ILoggingManager loggingManager = new LoggingManager();
         public void InitializeTable()
         {
             List<Item> initialItemList = LoadFromFile.LoadItems();
@@ -26,6 +28,9 @@ namespace Server.DatabaseInitialization
                     }
 
                     context.SaveChanges();
+
+                    EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "All initial items have been loaded to database.");
+                    loggingManager.LogEvent(eventLog);
                 }
             }
         }

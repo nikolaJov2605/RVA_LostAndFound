@@ -1,4 +1,5 @@
 ﻿using Common.Services;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,14 @@ namespace Server.Notifications
         private static List<IClientNotification> clientList;
         private int registeredUsersCnt;
         private IClientNotification client = null;
+        ILoggingManager loggingManager;
 
         public SubscriptionService()
         {
             registeredUsersCnt = 0;
             clientList = new List<IClientNotification>();
+            loggingManager = new LoggingManager();
+            
         }
 
         public void NotifyAll()
@@ -27,6 +31,8 @@ namespace Server.Notifications
             {
                 cl.NotifyForChanges();
             }
+            EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, "EXECUTED_NOTIFY_ALL_METHOD: All clients are notified.");
+            loggingManager.LogEvent(eventLog);
         }
 
         public void Subscribe()
@@ -36,6 +42,9 @@ namespace Server.Notifications
             {
                 clientList.Add(client);
                 registeredUsersCnt++;
+
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_SUBSCRIBE_METHOD: Client on channel {client.ToString()} has been subscribed");
+                loggingManager.LogEvent(eventLog);
             }
         }
 
@@ -46,6 +55,9 @@ namespace Server.Notifications
             {
                 clientList.Remove(client);
                 registeredUsersCnt--;
+
+                EventLog eventLog = new EventLog(DateTime.Now, Status.INFO, $"EXECUTED_UNSUBSCRIBE_METHOD: Client on channel {client.ToString()} has been unsubscribed");
+                loggingManager.LogEvent(eventLog);
             }
         }
     }

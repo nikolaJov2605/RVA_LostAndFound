@@ -1,0 +1,34 @@
+OPERATION EXECUTED: Time: 21/09/01 6:58:37 PM, Status: INFO, Message: EXECUTED SIGN_IN METHOD: Person admin successfully signed in..
+OPERATION EXECUTED: Time: 21/09/01 7:05:18 PM, Status: INFO, Message: All initial users have been loaded to database..
+OPERATION EXECUTED: Time: 21/09/01 7:05:21 PM, Status: INFO, Message: EXECUTED SIGN_IN METHOD: Person marko successfully signed in..
+OPERATION EXECUTED: Time: 21/09/01 7:05:21 PM, Status: INFO, Message: EXECUTED LOAD_PERSON METHOD: person marko loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:05:21 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:05:21 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:05:21 PM, Status: INFO, Message: EXECUTED_SUBSCRIBE_METHOD: Client on channel Common.Services.IClientNotification has been subscribed.
+OPERATION EXECUTED: Time: 21/09/01 7:06:50 PM, Status: INFO, Message: EXECUTED LOAD_PERSON METHOD: person marko loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:06:50 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:15 PM, Status: DEBUG, Message: EXECUTED_GET_AVAILABLE_COMMAND_ID: Generated commandID value is 6.
+OPERATION EXECUTED: Time: 21/09/01 7:07:15 PM, Status: INFO, Message: EXECUTED_GET_AVAILABLE_COMMAND_ID: commandID is generated..
+OPERATION EXECUTED: Time: 21/09/01 7:07:15 PM, Status: INFO, Message: EXECUTED_FIND_PERSON_METHOD: Person marko found in database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:15 PM, Status: INFO, Message: EXECUTED_ADD_ITEM_METHOD: Item majica has been added to database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:16 PM, Status: INFO, Message: EXECUTED_NOTIFY_ALL_METHOD: All clients are notified..
+OPERATION EXECUTED: Time: 21/09/01 7:07:16 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:16 PM, Status: INFO, Message: EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:16 PM, Status: INFO, Message: EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:16 PM, Status: INFO, Message: EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:07:58 PM, Status: INFO, Message: All initial users have been loaded to database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:02 PM, Status: INFO, Message: EXECUTED SIGN_IN METHOD: Person petar successfully signed in..
+OPERATION EXECUTED: Time: 21/09/01 7:08:03 PM, Status: INFO, Message: EXECUTED LOAD_PERSON METHOD: person petar loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:03 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:03 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:03 PM, Status: INFO, Message: EXECUTED_SUBSCRIBE_METHOD: Client on channel Common.Services.IClientNotification has been subscribed.
+OPERATION EXECUTED: Time: 21/09/01 7:08:23 PM, Status: INFO, Message: EXECUTED_ITEM_FOUND_METHOD: Item with key 7 has beend marked as found by petar..
+OPERATION EXECUTED: Time: 21/09/01 7:08:23 PM, Status: INFO, Message: EXECUTED_NOTIFY_ALL_METHOD: All clients are notified..
+OPERATION EXECUTED: Time: 21/09/01 7:08:23 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:24 PM, Status: INFO, Message: EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:24 PM, Status: INFO, Message: EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:24 PM, Status: INFO, Message: EXECUTED LOAD_PEOPLE METHOD: Multiple personns have been loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:33 PM, Status: INFO, Message: EXECUTED LOAD_PERSON METHOD: person petar loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:33 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:33 PM, Status: INFO, Message: EXECUTED LOAD_PERSON METHOD: person petar loaded from database..
+OPERATION EXECUTED: Time: 21/09/01 7:08:33 PM, Status: INFO, Message: EXECUTED_RETRIEVE_ALL_ITEMS_METHOD: Items have been successfully loaded from database..

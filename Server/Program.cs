@@ -29,8 +29,8 @@ namespace Server
             {
                 //Truncate Table to delete all old records.
                 context.Database.ExecuteSqlCommand("DELETE FROM [People]");
-            }*/
-
+            }
+            */
             Console.WriteLine("Adding initial data to database...");
 
             IDatabaseInitializer initializeItems = new ItemInitializer();

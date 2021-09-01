@@ -1,4 +1,5 @@
 ﻿using Front.Views;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,6 @@ namespace Front.Commands.LocalCommands
             commandHistory.RemoveRange(currentCommandIdx, commandHistory.Count - 1 - currentCommandIdx);
 
             mw = MainWindow.MainWindowInstance();
-            
         }
 
         public override void Undo()
